@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Spring Data</h1>
+					<h3>Core concepts</h3>
+				</section>
+
+				<section>
+					<h2>Ideology</h2>
+					<h3>of Spring Data and Spring Boot</h3>
+					<p>
+                        <ul>
+                            <li>Reusable components for any Java web service</li>
+                            <li>Smaller codebase</li>
+                            <li>Rapid application prototyping and development</li>
+                            <li>Reduced cost to maintain</li>
+                            <li>First class support from IntelliJ IDEA</li>
+                        </ul>
+                    </p>
+				</section>
+
+				<section>
+					<h2>History</h2>
+                    <table>
+                        <thead>
+                        
+                            <th style="text-align: center;">JDBC</th>
+                            <th style="text-align: center;">JPA</th>
+                            <th style="text-align: center;">Spring Data</th>
+                        
+                        </thead>
+                        <tbody>
+                        
+                            <td><img width="187" height="400" data-src="img/history_jdbc.jpg" alt="JDBC"></td>
+                            <td><img width="211" height="400" data-src="img/history_jpa.jpg" alt="JPA"></td>
+                            <td><img width="275" height="400" data-src="img/history_spring_data.jpg" alt="Spring Data"></td>
+                        
+                        </tbody>
+                    </table>
+                </section>
+
+				<section>
+					<h2>When we were young - <strong>JDBC</strong></h2>
+                    <aside style="float: left">
+                        <img width="187" height="400" data-src="img/history_jdbc.jpg" alt="JDBC">
+                    </aside>
+                    <h4>Work plan</h4>
+					<ol>
+                        <li class="fragment">Open the connection</li>
+                        <li class="fragment">Create the statement</li>
+                        <li class="fragment">Execute the statement</li>
+                        <li class="fragment">Loop through results</li>
+                        <li class="fragment">Treat exceptions</li>
+                        <li class="fragment">Handle transactions</li>
+                        <li class="fragment">Close the connection</li>
+                    </ol>
+				</section>
+
+                <section>
+                    <h2>The Pain</h2>
+                    <h4>JDBC</h4>
+                    <aside style="position: absolute; left: -250px;">
+                        <img width="187" height="400" data-src="img/history_jdbc.jpg" alt="JDBC">
+                    </aside>
+                    <pre>
+                        <code data-trim class="java">
+Connection connection = null;
+try {
+    connection = DriverManager.getConnection("jdbc:");
+    PreparedStatement preparedStatement = 
+                      connection.prepareStatement("SELECT title FROM books WHERE price < ?");
+    preparedStatement.setInt(1, 100);
+    ResultSet resultSet = preparedStatement.executeQuery();
+    while (resultSet.next()) {
+        System.out.println(resultSet.getString("title"));
+    }
+} catch (SQLException e) {
+    // What we should do here?
+} finally {
+    if (connection != null) {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            // Can't do nothing
+        }
+    }
+}
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>The Good Old Times - <strong>JPA</strong></h2>
+                    <aside style="position: absolute; left: -250px;">
+                        <img width="187" height="400" data-src="img/history_jpa.jpg" alt="JPA">
+                    </aside>
+                    <h6>HQL</h6>
+                    <pre>
+                        <code data-trim class="java">
+List&lt;Book&gt; books = entityManager
+    .createQuery("SELECT b FROM Book b WHERE b.price < :price", Book.class)
+    .setParameter("price", 100)
+    .getResultList();
+                        </code>
+                    </pre>
+                    <h6>Criteria API</h6>
+                    <pre>
+                        <code data-trim class="java">
+CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+CriteriaQuery&lt;Book&gt; criteria = builder.createQuery(Book.class);
+Root&lt;Book&gt; bookRoot = criteria.from( Book.class );
+criteria.select(bookRoot);
+criteria.where( builder.lessThan( bookRoot.get("price"), 100L ) );
+List&lt;Book&gt; books = entityManager.createQuery( criteria ).getResultList();
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>The Bright Present</h2>
+                    <h4>Spring Data</h4>
+                    <aside style="position: absolute; left: -250px;">
+                        <img width="187" height="400" data-src="img/history_spring_data.jpg" alt="Spring Data">
+                    </aside>
+                    <pre>
+                        <code data-trim class="java">
+public interface BooksRepository extends JpaRepository&lt;Book, Long&gt; {
+    List&lt;Book&gt; findByPriceIsLessThan(Long price);
+}
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3><a href="http://projects.spring.io/spring-data/">projects.spring.io/spring-data/</a></h3>
+                    <h4>Created back in 2008</h4>
+                    <small>
+                    <h5>Main modules</h5>
+
+                    <ul>
+                        <li><strong>Spring Data Commons</strong> - Core Spring concepts underpinning every Spring Data project.</li>
+                        <li><strong>Spring Data JPA</strong> - Makes it easy to implement JPA-based repositories.</li>
+                        <li><strong>Spring Data MongoDB</strong> - Spring based, object-document support and repositories for MongoDB.</li>
+                        <li><strong>Spring Data Redis</strong> - Provides easy configuration and access to Redis from Spring applications.</li>
+                        <li><strong>Spring Data Solr</strong> - Spring Data module for Apache Solr.</li>
+                        <li><strong>Spring Data Gemfire</strong> - Provides easy configuration and access to GemFire from Spring applications.</li>
+                        <li><strong>Spring Data REST</strong> - Exports Spring Data repositories as hypermedia-driven RESTful resources.</li>
+                    </ul>
+
+                    <p><h5>Community modules</h5></p>
+
+                    <ul>
+                        <li><strong>Spring Data Cassandra</strong> - Spring Data module for Apache Cassandra.</li>
+                        <li><strong>Spring Data Couchbase</strong> - Spring Data module for Couchbase.</li>
+                        <li><strong>Spring Data DynamoDB</strong> - Spring Data module for DynamoDB.</li>
+                        <li><strong>Spring Data Elasticsearch</strong> - Spring Data module for Elasticsearch.</li>
+                        <li><strong>Spring Data Neo4j</strong> - Spring based, object-graph support and repositories for Neo4j.</li>
+                    </ul>
+
+                    <p><h5>Related modules</h5></p>
+
+                    <ul>
+                        <li><strong>Spring Data JDBC Extensions</strong> - Provides extensions to the JDBC support provided in the Spring Framework.</li>
+                        <li><strong>Spring for Apache Hadoop</strong> - Simplifies Apache Hadoop by providing a unified configuration model and easy to use APIs for using HDFS, MapReduce, Pig, and Hive.</li>
+                    </ul>
+                    </small>
+
+                </section>
+
+                <section>
+                    <h2>Getting Started</h2>
+                    <pre>
+                        <code class="xml" data-trim>
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-data-jpa&lt;/artifactId&gt;
+	&lt;version&gt;1.9.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <section>
+
+                    <h2>Basics</h2>
+                    <pre>
+                        <code class="java" data-trim>
+public interface Repository&lt;T, ID extends Serializable&gt; {
+}
+
+public interface CrudRepository &lt;T, ID extends Serializable&gt; extends Repository&lt;T, ID&gt; {
+
+    &lt;S extends T&gt; S save(S entity);
+    &lt;S extends T&gt; Iterable&lt;S&gt; save(Iterable&lt;S&gt; entities);
+    T findOne(ID id);
+    boolean exists(ID id);
+    Iterable&lt;T&gt; findAll();
+    Iterable&lt;T&gt; findAll(Iterable&lt;ID&gt; ids);
+    long count();
+    void delete(ID id);
+    void delete(T entity);
+    void delete(Iterable&lt;? extends T&gt; entities);
+    void deleteAll();
+}
+                        </code>
+                    </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="java" data-trim>
+public interface PagingAndSortingRepository&lt;T, ID extends Serializable&gt;
+                                extends CrudRepository&lt;T, ID&gt; {
+	Iterable&lt;T&gt; findAll(Sort sort);
+	Page&lt;T&gt; findAll(Pageable pageable);
+}
+
+public interface JpaRepository&lt;T, ID extends Serializable&gt;
+                                extends PagingAndSortingRepository&lt;T, ID&gt; {
+	List&lt;T&gt; findAll();
+	List&lt;T&gt; findAll(Sort sort);
+	List&lt;T&gt; findAll(Iterable&lt;ID&gt; ids);
+	&lt;S extends T&gt; List&lt;S&gt; save(Iterable&lt;S&gt; entities);
+	void flush();
+	&lt;S extends T&gt; S saveAndFlush(S entity);
+	void deleteInBatch(Iterable&lt;T&gt; entities);
+	void deleteAllInBatch();
+	T getOne(ID id);
+}
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Declaring own queries</h2>
+                    <pre>
+                        <code class="java" data-trim>
+public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
+  List&lt;User&gt; findByLastname(String lastname);
+  Long countByLastname(String lastname);
+  Long deleteByLastname(String lastname);
+  List&lt;User&gt; removeByLastname(String lastname);
+}
+
+                        </code>
+                    </pre>
+                    </section>
+                    <section>
+                        <h2>Config</h2>
+                        <pre>
+                            <code class="java" data-trim>
+@Configuration
+@EnableJpaRepositories
+@EnableTransactionManagement
+class Config {
+@Bean
+public DataSource dataSource() {}
+
+@Bean
+public EntityManagerFactory entityManagerFactory() {}
+
+@Bean
+public PlatformTransactionManager transactionManager() {}
+}
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="xml" data-trim>
+&lt;jpa:repositories base-package=&quot;ru.ddgcorp.repositories&quot;/&gt;
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="java" data-trim>
+public class UserService {
+
+  @Autowired
+  private UserRepository repository;
+
+  public void doSomething() {
+    List&lt;User&gt; persons = repository.findByLastname(&quot;Matthews&quot;);
+  }
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Expose only needed methods</h2>
+                        <pre>
+                            <code class="java" data-trim>
+@NoRepositoryBean
+interface MyBaseRepository&lt;T, ID extends Serializable&gt; extends Repository&lt;T, ID&gt; {
+
+  T findOne(ID id);
+
+  T save(T entity);
+}
+
+interface UserRepository extends MyBaseRepository&lt;User, Long&gt; {
+  User findByEmailAddress(EmailAddress emailAddress);
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Some more examples</h2>
+                        <pre>
+                            <code class="java" data-trim>
+public interface PersonRepository extends Repository&lt;User, Long&gt; {
+ List&lt;Person&gt; findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
+
+ // Enables the distinct flag for the query
+ List&lt;Person&gt; findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);
+ List&lt;Person&gt; findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);
+
+ // Enabling ignoring case for an individual property
+ List&lt;Person&gt; findByLastnameIgnoreCase(String lastname);
+ // Enabling ignoring case for all suitable properties
+ List&lt;Person&gt; findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);
+
+ // Enabling static ORDER BY for a query
+ List&lt;Person&gt; findByLastnameOrderByFirstnameAsc(String lastname);
+ List&lt;Person&gt; findByLastnameOrderByFirstnameDesc(String lastname);
+
+ Person findFirstByOrderByLastnameAsc();
+ List&lt;Person&gt; findFirst10ByLastname(String lastname, Sort sort);
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Custom implementations</h2>
+                        <pre>
+                            <code class="java" data-trim>
+public interface BooksRepositoryCustom {
+    public void someMethod(Book book);
+}
+
+public class BooksRepositoryCustomImpl implements BooksRepositoryCustom {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Override
+    public void someMethod(Book book) {
+        entityManager
+                .createQuery(&quot;DELETE FROM Book WHERE title = 'test'&quot;)
+                .executeUpdate();
+    }
+}
+
+public interface BooksRepository extends JpaRepository&lt;Book, Long&gt;,
+                                BooksRepositoryCustom {
+    List&lt;Book&gt; findByPriceIsLessThan(Long price);
+}
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Using Named Queries</h2>
+                        <pre>
+                            <code class="java" data-trim>
+@Entity
+@NamedQuery(name = &quot;User.findByEmailAddress&quot;,
+  query = &quot;select u from User u where u.emailAddress = ?1&quot;)
+public class User {
+
+}
+
+public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
+
+  User findByEmailAddress(String emailAddress);
+
+  @Query("select u from User u where u.emailAddress = ?1")
+  List&lt;User&gt; findByLastname(String lastname);
+}
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+|Keyword|Sample|JPQL snippet|
+|------|:---:|-----:|
+|And|findByLastnameAndFirstname|&hellip; where x.lastname = ?1 and x.firstname = ?2|
+|Or|findByLastnameOrFirstname|&hellip; where x.lastname = ?1 or x.firstname = ?2|
+|Is,Equals|findByFirstname|&hellip; where x.firstname = 1?|
+||findByFirstnameIs||
+||findByFirstnameEquals||
+|Between|findByStartDateBetween|&hellip; where x.startDate between 1? and ?2|
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+|Keyword|Sample|JPQL snippet|
+|------|:---:|-----:|
+|LessThan|findByAgeLessThan|&hellip; where x.age &lt; ?1|
+|LessThanEqual|findByAgeLessThanEqual|&hellip; where x.age &lArr; ?1|
+|GreaterThan|findByAgeGreaterThan|&hellip; where x.age &gt; ?1|
+|GreaterThanEqual|findByAgeGreaterThanEqual|&hellip; where x.age &gt;= ?1|
+|After|findByStartDateAfter|&hellip; where x.startDate &gt; ?1|
+|Before|findByStartDateBefore|&hellip; where x.startDate &lt; ?1|
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+|Keyword|Sample|JPQL snippet|
+|------|:---:|-----:|
+|IsNull|findByAgeIsNull|&hellip; where x.age is null|
+|IsNotNull,NotNull|findByAge(Is)NotNull|&hellip; where x.age not null|
+|Like|findByFirstnameLike|&hellip; where x.firstname like ?1|
+|NotLike|findByFirstnameNotLike|&hellip; where x.firstname not like ?1|
+|StartingWith|findByFirstnameStartingWith|&hellip; where x.firstname like ?1 (parameter bound with appended %)|
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+|Keyword|Sample|JPQL snippet|
+|------|:---:|-----:|
+|EndingWith|findByFirstnameEndingWith|&hellip; where x.firstname like ?1 (parameter bound with prepended %)|
+|Containing|findByFirstnameContaining|&hellip; where x.firstname like ?1 (parameter bound wrapped in %)|
+|OrderBy|findByAgeOrderByLastnameDesc|&hellip; where x.age = ?1 order by x.lastname desc|
+|Not|findByLastnameNot|&hellip; where x.lastname &lt;&gt; ?1|
+|In|findByAgeIn(Collection&lt;Age&gt; ages)|&hellip; where x.age in ?1|
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+|Keyword|Sample|JPQL snippet|
+|------|:---:|-----:|
+|NotIn|findByAgeNotIn(Collection&lt;Age&gt; age)|&hellip; where x.age not in ?1|
+|True|findByActiveTrue()|&hellip; where x.active = true|
+|False|findByActiveFalse()|&hellip; where x.active = false|
+|IgnoreCase|findByFirstnameIgnoreCase|&hellip; where UPPER(x.firstame) = UPPER(?1)|
+                    </script>
+                </section>
+
+                <section>
+
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+                width: 1000,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
