@@ -1,0 +1,38 @@
+baseURL = "http://nnl.rocks/"
+languageCode = "en-us"
+title = "Neonailol"
+theme = "academic"
+
+[outputs]
+    home = [ "HTML", "CSS", "RSS" ]
+    section = [ "HTML", "RSS" ]
+
+[params]
+    color_theme = "1950s"
+    name = "Valeriy Zhirnov"
+    role = "Software Developer"
+    avatar = "portrait.jpg"
+    telegram = "neonailol"
+
+[[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/neonailol"
+
+[[params.social]]
+    icon = "telegram"
+    icon_pack = "fa"
+    link = "//t.me/neonailol"
+
+[[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/neonailol"
+
+[params.menus]
+  align_right = true
+
+[[menu.main]]
+  name = "Home"
+  url = "#about"
+  weight = 1
