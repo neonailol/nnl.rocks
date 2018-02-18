@@ -1,4 +1,4 @@
-baseURL = "http://nnl.rocks/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Neonailol"
 theme = "academic"
