@@ -39,15 +39,141 @@ fun transition(source: Shop, destination: Shop, product: Product, quantity: BigD
 Let's start with most typical approach for implementation:
 
 ```kotlin
-fun transition(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
+fun transfer(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
 
+    if (quantity <= BigDecimal.ZERO) {
+        throw IllegalArgumentException(
+            "Transition quantity must be positive, found $quantity"
+        )
+    }
+
+    if (source == destination) {
+        throw IllegalArgumentException(
+            "Cannot transition to itself, $source and $destination are equal"
+        )
+    }
+
+    if (source.quantity(product) <= BigDecimal.ZERO) {
+        throw IllegalStateException(
+            "Quantity of $product on $source is zero"
+        )
+    }
+
+    source.move(product, destination, quantity)
+
+    if (source.quantity(product) <= BigDecimal.ZERO) {
+        throw IllegalStateException(
+            "Not enough $product on $source, need $quantity"
+        )
+    }
 }
 ```
 
-[Source](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/util/Preconditions.kt)
-[require](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html)
-[requireNotNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html)
-[check](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check.html)
-[checkNotNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check-not-null.html)
-[assert](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html)
-[error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/error.html)
+Kotlin saves us from null checks, but code is not great:
+
+- A lot of noise from the if statements
+- Repetitive throw statements
+- Only one line that do something other than checking
+
+Now see how we can apply kotlin [preconditions](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/util/Preconditions.kt) to this code.
+
+First, lets see what tools we have in kotlin standard library:
+
+- [require(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html): Throws an `IllegalArgumentException` if the value is false
+- [requireNotNull(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html): Throws an `IllegalArgumentException` if the value is null. Otherwise returns the not null value.
+- [check(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check.html): Throws an `IllegalStateException` if the value is false.
+- [checkNotNull(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check-not-null.html): Throws an `IllegalStateException` if the value is null. Otherwise returns the not null value.
+- [assert(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html): Throws an `AssertionError` if the value is false and runtime assertions have been enabled on the JVM using the `-ea` JVM option.
+- [error(message)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/error.html): Throws an `IllegalStateException` with the given message.
+
+All of this functions, except error, can be invoked with optional lazy message, supplied via lambda.
+
+Next, I rewrite transfer function code using these functions
+
+```kotlin
+fun transfer2(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
+
+    require(quantity > BigDecimal.ZERO) {
+        "Transition quantity must be positive, found $quantity"
+    }
+
+    require(source != destination) {
+        "Cannot transition to itself, $source and $destination are equal"
+    }
+
+    check(source.quantity(product) > BigDecimal.ZERO) {
+        "Quantity of $product on $source is zero"
+    }
+
+    source.move(product, destination, quantity)
+
+    check(source.quantity(product) >= BigDecimal.ZERO) {
+        "Not enough $product on $source, need $quantity"
+    }
+}
+```
+
+Code is much simpler, and easy to read, but still there are room for improvements. Imagine that you need to reuse some of this checks in other code, for example, checking quantity for positive values. It would require copy and paste, and this can lead to errors, where you forgot to change some parameters. What can be done then? We can apply some of concepts of [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) and [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design) to code for making it better.
+
+Start with _quantity_, it's a good candidate for translating into [value object](https://martinfowler.com/bliki/ValueObject.html)
+
+```kotlin
+class Quantity(val value: BigDecimal) {
+    init {
+        require(value > BigDecimal.ZERO) {
+            "Quantity must be positive, found $value"
+        }
+    }
+}
+```
+
+Now we can be sure that quantity is always positive. Next is _transfer_ function is a good candidate to becoming set of objects:
+
+```kotlin
+open class Operation(
+    val source: Shop,
+    val destination: Shop
+) {
+
+    init {
+        require(source != destination) {
+            "Cannot make an operation, $source and $destination are equal"
+        }
+    }
+}
+
+class BalanceTransferCheck(
+    private val shop: Shop,
+    private val product: Product,
+    private val operation: () -> Unit
+) {
+
+    fun commit() {
+        checkBalance()
+        operation()
+        checkBalance()
+    }
+
+    private fun checkBalance() {
+        check(shop.quantity(product) >= BigDecimal.ZERO) {
+            "Not enough $product on $shop"
+        }
+    }
+}
+
+class Transfer(
+    source: Shop,
+    destination: Shop,
+    private val product: Product,
+    private val quantity: Quantity
+) : Operation(source, destination) {
+
+    fun commit() {
+        BalanceTransferCheck(source, product) {
+            source.move(product, destination, quantity.value)
+        }.commit()
+    }
+}
+```
+
+Looking good, we removed most of repetitions, made reusable components out of function, and in general designed a quality solution for our problem.
