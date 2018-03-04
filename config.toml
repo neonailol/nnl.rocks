@@ -13,6 +13,8 @@ theme = "academic"
     role = "Software Developer"
     avatar = "portrait.jpg"
     telegram = "neonailol"
+    date_format = "Jan 2, 2006"
+    time_format = "3:04 PM"
 
 [[params.social]]
     icon = "github"
@@ -36,3 +38,9 @@ theme = "academic"
   name = "Home"
   url = "#about"
   weight = 1
+
+[[menu.main]]
+  name = "Notes"
+  url = "notes"
+  weight = 1
+
