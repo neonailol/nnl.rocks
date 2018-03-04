@@ -13,8 +13,8 @@ theme = "academic"
     role = "Software Developer"
     avatar = "portrait.jpg"
     telegram = "neonailol"
-    date_format = "Jan 2, 2006"
-    time_format = "3:04 PM"
+    date_format = "2006-01-02"
+    time_format = "00:00"
 
 [[params.social]]
     icon = "github"
