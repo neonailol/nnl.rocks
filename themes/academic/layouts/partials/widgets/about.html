@@ -61,7 +61,7 @@
       <div class="col-sm-5">
         <h3>{{ i18n "interests" | markdownify }}</h3>
         <ul class="ul-interests">
-          {{ range .interests }}
+          {{ range . }}
           <li>{{ . | markdownify }}</li>
           {{ end }}
         </ul>
@@ -92,7 +92,7 @@
       <div class="col-sm-11">
         <h3>{{ i18n "skills" | markdownify }}</h3>
         <ul class="ul-interests">
-          {{ range .skills }}
+          {{ range . }}
           <li>{{ . | markdownify }}</li>
           {{ end }}
         </ul>
