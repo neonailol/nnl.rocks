@@ -5,12 +5,15 @@
 
 <div class="universal-wrapper">
 
+  <div class="row">
+
   <h1>{{ .Title | default (i18n "notes") }}</h1>
 
   {{ with .Content }}
   <div class="article-style" itemprop="articleBody">{{ . }}</div>
   {{ end }}
 
+  <section class="home-section">
   {{ $paginator := .Paginate .Data.Pages }}
   {{ range $paginator.Pages }}
     {{ $params := dict "note" . }}
@@ -18,6 +21,9 @@
   {{ end }}
 
   {{ partial "pagination" . }}
+  </section>
+
+</div>
 
 </div>
 {{ partial "footer_container.html" . }}
