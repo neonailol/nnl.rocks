@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Neonailol"
 theme = "academic"
+pygmentsCodefences = true
 
 [outputs]
     home = [ "HTML", "CSS", "RSS" ]
