@@ -1,12 +1,23 @@
 +++
 title = "Kotlin Preconditions"
-summary = "failing fast with precoditions"
+summary = "failing fast with preconditions"
 date = 2018-03-04
 draft = false
-tags = ["kotlin"]
+tags = ["kotlin", "oop"]
 +++
 
-In this note i would like describe how to fail fast when method invoked with invallid input, or when state is incorrect inside function code.
+In this note, I would like to describe how to fail fast when method invoked with invalid input, or when a state is incorrect inside function code.
+
+The concept of preconditions is coming from [Design by contract](https://en.wikipedia.org/wiki/Design_by_contract) approach. Simply saying client code that invokes an operation must meet required conditions and be in right state before and after an invoking.
+
+I use transition of product between to shops as an example. Here are requirements for this operation:
+
+- Transferring quantity must be positive
+- Source and destination shops must not be equal
+- Source shop must have specified product on balance
+- After operation quantity of product on source shop must be zero or positive
+
+First, there are specifications of shop and product:
 
 ```kotlin
 interface Shop {
@@ -15,18 +26,21 @@ interface Shop {
 }
 
 interface Product
+```
 
+And here our transition function stub:
+
+```kotlin
+fun transition(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
+    TODO("Not Implemented")
+}
+```
+
+Let's start with most typical approach for implementation:
+
+```kotlin
 fun transition(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
 
-    require(source.quantity(product) > BigDecimal.ZERO) {
-        "Quantity of $product on $source is zero"
-    }
-
-    source.move(product, destination, quantity)
-
-    check(source.quantity(product) >= BigDecimal.ZERO) {
-        "Not enough $product on $source, need $quantity"
-    }
 }
 ```
 
@@ -35,3 +49,5 @@ fun transition(source: Shop, destination: Shop, product: Product, quantity: BigD
 [requireNotNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html)
 [check](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check.html)
 [checkNotNull](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/check-not-null.html)
+[assert](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/assert.html)
+[error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/error.html)
