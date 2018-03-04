@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+{{ partial "header_image.html" . }}
+
+<div class="universal-wrapper">
+
+  <h1>{{ .Title | default (i18n "notes") }}</h1>
+
+  {{ with .Content }}
+  <div class="article-style" itemprop="articleBody">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+    {{ $params := dict "note" . }}
+    {{ partial "note_li" $params }}
+  {{ end }}
+
+  {{ partial "pagination" . }}
+
+</div>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,82 @@
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $notes_len := len (where (where $.Site.RegularPages "Type" "note") ".Params.notonhomepage" nil) }}
+
+<!-- Notes widget -->
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+    {{ if gt $notes_len $page.Params.count }}
+    <p class="view-all">
+      <a href="{{ "/note/" | relLangURL }}">
+        {{ i18n "more_notes" | markdownify }}
+        <i class="fa fa-angle-double-right"></i>
+      </a>
+    </p>
+    {{ end }}
+
+  </div>
+  <div class="col-xs-12 col-md-8">
+
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+
+    {{ if gt (len $page.Params.tags_include) 0 }}
+      {{ $notes := where (where (where $.Site.RegularPages "Type" "note") ".Params.tags" "intersect" $page.Params.tags_include) ".Params.notonhomepage" nil }}
+
+      {{ $.Scratch.Add "show_note" "1" }}
+      {{ range $note := first $page.Params.count $notes }}
+
+        {{ $.Scratch.Set "show_note" "1" }}
+
+        {{/* If `tags_include` is set, exclude notes with no tags. */}}
+        {{ if and ($page.Params.tags_include) (lt (len .Params.tags) 1) }}
+          {{ $.Scratch.Set "show_note" "0" }}
+        {{end}}
+
+        {{/* If `tags_exclude` is set, exclude notes. */}}
+        {{ range $key, $val := .Params.tags }}
+          {{ if in $page.Params.tags_exclude $val }}
+          {{ $.Scratch.Set "show_note" "0" }}
+        {{end}}
+      {{end}}
+
+      {{ $show_note := $.Scratch.Get "show_note" }}
+      {{ if ne $show_note "0" }}
+        {{ $params := dict "note" . }}
+        {{ partial "note_li" $params }}
+      {{end}}
+
+      {{ end }}
+    {{ else}}
+      {{ $notes := where (where $.Site.RegularPages "Type" "note") ".Params.notonhomepage" nil }}
+
+      {{ $.Scratch.Add "show_note" "1" }}
+      {{ range $note := first $page.Params.count $notes }}
+
+        {{ $.Scratch.Set "show_note" "1" }}
+
+        {{/* If `tags_include` is set, exclude notes with no tags. */}}
+        {{ if and ($page.Params.tags_include) (lt (len .Params.tags) 1) }}
+          {{ $.Scratch.Set "show_note" "0" }}
+        {{end}}
+
+        {{/* If `tags_exclude` is set, exclude notes. */}}
+        {{ range $key, $val := .Params.tags }}
+          {{ if in $page.Params.tags_exclude $val }}
+          {{ $.Scratch.Set "show_note" "0" }}
+        {{end}}
+      {{end}}
+
+      {{ $show_note := $.Scratch.Get "show_note" }}
+      {{ if ne $show_note "0" }}
+        {{ $params := dict "note" . }}
+        {{ partial "note_li" $params }}
+      {{end}}
+
+      {{ end }}
+    {{ end }}
+
+  </div>
+</div>
