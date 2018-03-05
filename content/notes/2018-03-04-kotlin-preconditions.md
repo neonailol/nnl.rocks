@@ -19,26 +19,26 @@ I use transition of product between to shops as an example. Here are requirement
 
 First, there are specifications of shop and product:
 
-```kotlin
+{{< highlight kotlin >}}
 interface Shop {
     fun quantity(product: Product): BigDecimal
     fun move(product: Product, destination: Shop, quantity: BigDecimal)
 }
 
 interface Product
-```
+{{< /highlight >}}
 
 Moreover, here our transition function stub:
 
-```kotlin
+{{< highlight kotlin >}}
 fun transition(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
     TODO("Not Implemented")
 }
-```
+{{< /highlight >}}
 
 Let's start with the most typical approach for implementation:
 
-```kotlin
+{{< highlight kotlin >}}
 fun transfer(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
 
     if (quantity <= BigDecimal.ZERO) {
@@ -67,7 +67,7 @@ fun transfer(source: Shop, destination: Shop, product: Product, quantity: BigDec
         )
     }
 }
-```
+{{< /highlight >}}
 
 Kotlin saves us from null checks, but the code is not great:
 
@@ -90,7 +90,7 @@ All of this functions, except error, can be invoked with an optional lazy messag
 
 Next, I rewrite transfer function code using these functions:
 
-```kotlin
+{{< highlight kotlin >}}
 fun transfer2(source: Shop, destination: Shop, product: Product, quantity: BigDecimal) {
 
     require(quantity > BigDecimal.ZERO) {
@@ -111,13 +111,13 @@ fun transfer2(source: Shop, destination: Shop, product: Product, quantity: BigDe
         "Not enough $product on $source, need $quantity"
     }
 }
-```
+{{< /highlight >}}
 
 The code is much more straightforward and easy to read, but still, there is room for improvements. Imagine that you need to reuse some of this checks in other code, for example, checking quantity for positive values. It would require copy and paste, and this can lead to errors, where you forgot to change some parameters. What can we do about it? We can apply some of concepts of [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) and [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design) to code for making it better.
 
 Start with _quantity_; it is a good candidate for translating into [value object](https://martinfowler.com/bliki/ValueObject.html)
 
-```kotlin
+{{< highlight kotlin >}}
 class Quantity(val value: BigDecimal) {
     init {
         require(value > BigDecimal.ZERO) {
@@ -125,11 +125,11 @@ class Quantity(val value: BigDecimal) {
         }
     }
 }
-```
+{{< /highlight >}}
 
 Now we can be sure that quantity is always greater than zero. Next is _transfer_ function is an excellent candidate to becoming set of objects:
 
-```kotlin
+{{< highlight kotlin >}}
 open class Operation(
     val source: Shop,
     val destination: Shop
@@ -174,6 +174,6 @@ class Transfer(
         }.commit()
     }
 }
-```
+{{< /highlight >}}
 
 Looking good, we removed most of the repetitions, made reusable components out of function, and in general designed a quality solution for our problem.
