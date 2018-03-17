@@ -9,7 +9,7 @@ pygmentsCodefences = true
     section = [ "HTML", "RSS" ]
 
 [params]
-    color_theme = "1950s"
+    color_theme = "default"
     name = "Valeriy Zhirnov"
     role = "Software Developer"
     avatar = "portrait.jpg"
