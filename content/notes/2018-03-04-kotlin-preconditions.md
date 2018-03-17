@@ -1,6 +1,6 @@
 +++
 title = "Kotlin Preconditions"
-summary = "failing fast with preconditions"
+summary = "failing fast with preconditions."
 date = 2018-03-04
 draft = false
 tags = ["kotlin", "oop"]
@@ -49,13 +49,13 @@ fun transfer(source: Shop, destination: Shop, product: Product, quantity: BigDec
 
     if (source == destination) {
         throw IllegalArgumentException(
-            "Cannot transition to itself, $source and $destination are equal"
+            "Cannot transition to itself, $source and $destination are equal."
         )
     }
 
     if (source.quantity(product) <= BigDecimal.ZERO) {
         throw IllegalStateException(
-            "Quantity of $product on $source is zero"
+            "Quantity of $product on the $source is zero."
         )
     }
 
@@ -77,7 +77,7 @@ Kotlin saves us from null checks, but the code is not great:
 
 Now see how we can apply kotlin [preconditions](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/util/Preconditions.kt) to this code.
 
-First, lets see what tools we have in kotlin standard library:
+First, let's see what tools we have in kotlin standard library:
 
 - [require(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html): Throws an `IllegalArgumentException` if the value is false
 - [requireNotNull(value)](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require-not-null.html): Throws an `IllegalArgumentException` if the value is null. Otherwise returns the not null value.
@@ -98,11 +98,11 @@ fun transfer2(source: Shop, destination: Shop, product: Product, quantity: BigDe
     }
 
     require(source != destination) {
-        "Cannot transition to itself, $source and $destination are equal"
+        "Cannot transition to itself, $source and $destination are equal."
     }
 
     check(source.quantity(product) > BigDecimal.ZERO) {
-        "Quantity of $product on $source is zero"
+        "Quantity of $product on the $source is zero."
     }
 
     source.move(product, destination, quantity)
@@ -137,7 +137,7 @@ open class Operation(
 
     init {
         require(source != destination) {
-            "Cannot make an operation, $source and $destination are equal"
+            "Cannot make an operation, $source and $destination are equal."
         }
     }
 }
