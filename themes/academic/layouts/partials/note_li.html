@@ -1,9 +1,8 @@
 {{ $note := .note }}
 
-<div class="article-list-item" itemscope itemprop="blogpost" itemtype="http://schema.org/BlogPosting">
+<div class="card-simple" itemscope itemprop="blogpost" itemtype="http://schema.org/BlogPosting">
 
   <span class="article-date">
-    {{ if ne $note.Params.Lastmod $note.Params.Date }} {{ i18n "last_updated" }} {{ end }}
     <time datetime="{{ $note.Date }}" itemprop="datePublished dateModified">
       {{ $note.Lastmod.Format $note.Site.Params.date_format }}
     </time>
@@ -11,13 +10,17 @@
 
   <span class="middot-divider"></span>
 
-  <a itemprop="headline" href="{{ $note.Permalink }}" itemprop="url">{{ $note.Title}}</a>
-
-  <span class="middot-divider"></span>
-
   <span class="article-reading-time">
     <small>{{ $note.ReadingTime }} {{ i18n "minute_read" }}</small>
   </span>
+
+  <span class="middot-divider"></span>
+
+  <a href="{{ $note.Permalink }}" itemprop="url">
+    <span itemprop="headline">
+      {{ $note.Title}}
+    </span>
+  </a>
 
   <span class="middot-divider"></span>
 

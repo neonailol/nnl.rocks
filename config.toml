@@ -10,12 +10,14 @@ pygmentsCodefences = true
 
 [params]
     color_theme = "default"
+    font = "default"
     name = "Valeriy Zhirnov"
     role = "Software Developer"
     avatar = "portrait.jpg"
     telegram = "neonailol"
     date_format = "2006-01-02"
     time_format = "00:00"
+    highlight = true 
 
 [[params.social]]
     icon = "github"
