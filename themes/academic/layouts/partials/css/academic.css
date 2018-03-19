@@ -1536,5 +1536,29 @@ body.dark {
  **************************************************/
 
 pre code {
-  white-space: pre
+  white-space: pre;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
+
+  .article-reading-time {
+    display: none;
+  }
+
+  .middot-divider {
+    display: none;
+  }
+
+  .article-summary {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
