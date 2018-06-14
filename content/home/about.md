@@ -11,7 +11,7 @@ interests:
 
 skills:
 - Kotlin (JVM, Native, JS), Java, C/C++ (Unreal Engine, QT), SQL (Postgres)
-- Groovy, JavaScript, Python, Markdown, C#
+- Scala (Gatling), Groovy, JavaScript, Python, Markdown, C#
 - Spring (Boot, Web, Security, Data JPA), Hibernate, JPA, JDBC, Bean Validation
 - Jackson, JOOQ, Springfox, Takes, Cactoos, Netflix OSS, Logback, Slf4j
 - TestNG, Rest-Assured, Allure, Hamcrest, JUnit, Json-Path
