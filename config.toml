@@ -22,7 +22,7 @@ enableGitInfo = true
     time_format = "00:00"
     highlight = true
     highlight_languages = ["kotlin"]
-    highlight_style = "nord"
+    highlight_style = "monokai"
 
 [[params.social]]
     icon = "github"
