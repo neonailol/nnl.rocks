@@ -3,9 +3,11 @@ languageCode = "en-us"
 title = "Neonailol"
 theme = "academic"
 pygmentsCodefences = true
+pygmentsStyle = "solarized"
+enableGitInfo = true
 
 [outputs]
-    home = [ "HTML", "CSS", "RSS" ]
+    home = [ "HTML", "CSS", "RSS", "JSON" ]
     section = [ "HTML", "RSS" ]
 
 [params]
@@ -15,23 +17,26 @@ pygmentsCodefences = true
     role = "Software Developer"
     avatar = "portrait.jpg"
     telegram = "neonailol"
+    twitter = "neonailol"
     date_format = "2006-01-02"
     time_format = "00:00"
-    highlight = true 
+    highlight = true
+    highlight_languages = ["kotlin"]
+    highlight_style = "nord"
 
 [[params.social]]
     icon = "github"
-    icon_pack = "fa"
+    icon_pack = "fab"
     link = "//github.com/neonailol"
 
 [[params.social]]
     icon = "telegram"
-    icon_pack = "fa"
+    icon_pack = "fab"
     link = "//t.me/neonailol"
 
 [[params.social]]
     icon = "twitter"
-    icon_pack = "fa"
+    icon_pack = "fab"
     link = "//twitter.com/neonailol"
 
 [params.menus]

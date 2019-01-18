@@ -19,6 +19,15 @@ I use transition of product between to shops as an example. Here are requirement
 
 First, there are specifications of shop and product:
 
+```kotlin
+interface Shop {
+    fun quantity(product: Product): BigDecimal
+    fun move(product: Product, destination: Shop, quantity: BigDecimal)
+}
+
+interface Product
+```
+
 {{< highlight kotlin >}}
 interface Shop {
     fun quantity(product: Product): BigDecimal
