@@ -1,24 +1,19 @@
----
-active: true
-date: 2016-04-20T00:00:00
-weight: 5
-widget: about
++++
+# About widget.
+widget = "about"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless = true  # This file represents a page section.
+active = true  # Activate this widget? true/false
+weight = 20  # Order that this section will appear in.
 
-interests:
-- Backend Web Development
-- Kotlin
-- Unreal Engine
+title = ""
 
-skills:
-- Kotlin (JVM, Native, JS), Java, C/C++ (Unreal Engine, QT), SQL (Postgres)
-- Scala (Gatling), Groovy, JavaScript, Python, Markdown, C#
-- Spring (Boot, Web, Security, Data JPA), Hibernate, JPA, JDBC, Bean Validation
-- Jackson, JOOQ, Springfox, Takes, Cactoos, Netflix OSS, Logback, Slf4j
-- TestNG, Rest-Assured, Allure, Hamcrest, JUnit, Json-Path, Maven, RabbitMQ
-- Gradle, Gardle-Kotlin-DSL, Intellij IDEA, VS Code, Git, JSON, Microservices
-- Linux, Bash, Swagger, RESTful API, HTML, CSS, Android, Raspberry PI
-- Github, Sonar, Jenkins, Sentry, JitPack, TravisCI, Zerocracy, Rultor, Jekyll
-- OOP, FP, AOP, DDD, TDD, Clean Architecure, Elegant Objects, C4 Model, Google
-- Programming Motherfucker Manifesto
+# Choose the user profile to display
+# This should be the username of a profile in your `content/authors/` folder.
+# See https://sourcethemes.com/academic/docs/get-started/#introduce-yourself
+author = "admin"
 
----
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["0", "0", "0", "0"]
+
++++
