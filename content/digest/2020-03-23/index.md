@@ -36,7 +36,7 @@ draft: false
     {{< digest_entry >}}
         {{< digest_icon  icon_name="brain" icon_pack="fas" >}}
         {{< digest_description url="<https://github.com/TachibanaYoshino/AnimeGAN>" image="anime_gan.webp" >}}
-            A Tensorflow implementation of AnimeGAN for fast photo animation
+            A TensorFlow implementation of AnimeGAN for fast photo animation
         {{</ digest_description >}}
     {{</ digest_entry >}}
 
