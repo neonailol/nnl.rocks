@@ -1,0 +1,10 @@
+{{- if (.Get "icon_name") -}}
+  {{- $icon := .Get "icon_name" -}}
+  {{- $pack := or (.Get "icon_pack") "fas" -}}
+  {{- $pack_prefix := $pack -}}
+  {{- if in (slice "fab" "fas" "far" "fal") $pack -}}
+    {{- $pack_prefix = "fa" -}}
+  {{- end -}}
+  {{- $padding_right := (.Get "padding_right") | default 1 -}}{{/* Defaulting to 1 prevents no spacing when minimizing HTML. */}}
+  <i class="text-danger align-self-start mt-3 ml-1 mr-1 {{ $pack }} {{ $pack_prefix }}-{{ $icon }} {{with (.Get "padding_left")}}pl-{{.}}{{end}} {{with $padding_right}}pr-{{.}}{{end}} {{if ne (.Get "fixed_width") "false"}}fa-fw{{end}}"></i>
+{{- end -}}

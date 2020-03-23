@@ -17,8 +17,8 @@
     {{ end }}
     <div class="card-simple">
       <span class="article-date">
-        <time datetime="{{ $.Date }}" itemprop="datePublished dateModified">
-          {{ $.Lastmod.Format site.Params.date_format }}
+        <time datetime="{{.Page.Params.digest_date}}" itemprop="datePublished dateModified">
+          {{.Page.Params.digest_date}}
         </time>
       </span>
       <span class="middot-divider"></span>
