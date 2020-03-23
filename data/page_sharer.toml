@@ -1,6 +1,17 @@
 # Page Sharer
 # Documentation: https://sourcethemes.com/academic/docs/customization/#page-sharer
 
+
+
+
+[[buttons]]
+  id = "telegram"
+  url = "https://telegram.me/share/url?url={url}&text={title}"
+  title = "Telegram"
+  icon_pack = "fab"
+  icon = "telegram"
+  enable = true
+
 [[buttons]]
   id = "twitter"
   url = "https://twitter.com/intent/tweet?url={url}&text={title}"
@@ -55,7 +66,7 @@
   title = "Reddit"
   icon_pack = "fab"
   icon = "reddit-alien"
-  enable = false
+  enable = true
 
 [[buttons]]
   id = "pinterest"
@@ -79,4 +90,4 @@
   title = "Tumblr"
   icon_pack = "fab"
   icon = "tumblr"
-  enable = false
+  enable = true
