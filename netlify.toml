@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.68.0"
+  HUGO_VERSION = "0.68.2"
   HUGO_ENABLEGITINFO = "true"
 
 [context.production.environment]
@@ -24,3 +24,7 @@
   for = "index.xml"
   [headers.values]
     Content-Type = "application/rss+xml"
+
+[build.processing.images]
+  compress = true
+
