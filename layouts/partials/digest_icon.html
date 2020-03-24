@@ -1,0 +1,7 @@
+{{- $icon := .icon -}}
+{{- $pack := .pack -}}
+{{- $pack_prefix := $pack -}}
+{{- if in (slice "fab" "fas" "far" "fal") $pack -}}
+  {{- $pack_prefix = "fa" -}}
+{{- end -}}
+<i class="text-danger align-self-start mt-3 ml-1 mr-1 {{ $pack }} {{ $pack_prefix }}-{{ $icon }} pr-1 fa-fw"></i>

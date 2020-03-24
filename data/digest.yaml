@@ -1,0 +1,43 @@
+entries:
+  "2020-03-23":
+    - url: https://medium.com/@fortes.arthur/hands-on-speech-recognition-engine-with-keras-and-python-c60488ac53cd
+      description: Hands-On Speech Recognition Engine with Keras and Python
+      icon: newspaper
+      pack: fas
+    - url: https://amitness.com/2019/08/math-for-programmers/
+      description: Math Symbols Explained with Python
+      icon: newspaper
+      pack: fas
+    - url: https://github.com/TachibanaYoshino/AnimeGAN
+      description: A TensorFlow implementation of AnimeGAN for fast photo animation
+      icon: brain
+      pack: fas
+      image: anime_gan.webp
+    - url: https://github.com/abhat222/Data-Science--Cheat-Sheet
+      description: Large collection of data science related cheat sheets
+      icon: github
+      pack: fab
+    - url: https://github.com/becauseofAI/HelloFace
+      description: Face recognition related technologies
+      icon: brain
+      pack: fas
+    - url: https://www.nature.com/collections/cgaefaegbi
+      description: Explore most highly downloaded neuroscience articles in 2019
+      icon: book
+      pack: fas
+    - url: https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html
+      description: Face and hand tracking in the browser with MediaPipe and TensorFlow.js
+      icon: newspaper
+      pack: fas
+    - url: https://blog.insightdatascience.com/ai-for-3d-generative-design-17503d0b3943
+      description: AI for generative design - Plain text to 3D Designs
+      icon: newspaper
+      pack: fas
+    - url: https://courses.csail.mit.edu/6.851/fall17/lectures/
+      description: MIT course about advanced data structures (fall'17)
+      icon: video
+      pack: fas
+    - url: https://machinelearningflashcards.com/
+      description: 300 digital flashcards about machine learning for 12$
+      icon: dollar-sign
+      pack: fas
