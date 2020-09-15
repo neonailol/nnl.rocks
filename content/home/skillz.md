@@ -30,5 +30,4 @@ subtitle = ""
 - Linux, Bash, Swagger, RESTful API, HTML, CSS, Android, Raspberry PI, Kafka
 - Github, Sonar, Jenkins, Sentry, JitPack, TravisCI, Zerocracy, Rultor, Jekyll
 - OOP, FP, AOP, DDD, TDD, Clean Architecture, Elegant Objects, C4 Model, Google
-- Programming Motherfucker Manifesto
-Ansible, Zabbix, Grafana, Kibana, Zipkin;
+- Programming Motherfucker Manifesto, Ansible, Zabbix, Grafana, Kibana, Zipkin
