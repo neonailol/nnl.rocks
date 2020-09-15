@@ -22,12 +22,13 @@ subtitle = ""
 +++
 
 - Kotlin (JVM, Native, JS), Java, C/C++ (Unreal Engine, QT), SQL (Postgres)
-- Scala (Gatling), Groovy, JavaScript, Python, Markdown, C#
+- Scala (Gatling), Groovy, JavaScript, Python, Markdown, C# (Unity)
 - Spring (Boot, Web, Security, Data JPA), Hibernate, JPA, JDBC, Bean Validation
-- Jackson, JOOQ, Springfox, Takes, Cactoos, Netflix OSS, Logback, Slf4j
+- Grafana, Kibana, Jackson, JOOQ, Springfox, Takes, Cactoos, Netflix OSS, Logback, Slf4j
 - TestNG, Rest-Assured, Allure, Hamcrest, JUnit, Json-Path, Maven, RabbitMQ
 - Gradle, Gardle-Kotlin-DSL, Intellij IDEA, VS Code, Git, JSON, Microservices
-- Linux, Bash, Swagger, RESTful API, HTML, CSS, Android, Raspberry PI
+- Linux, Bash, Swagger, RESTful API, HTML, CSS, Android, Raspberry PI, Kafka
 - Github, Sonar, Jenkins, Sentry, JitPack, TravisCI, Zerocracy, Rultor, Jekyll
-- OOP, FP, AOP, DDD, TDD, Clean Architecure, Elegant Objects, C4 Model, Google
+- OOP, FP, AOP, DDD, TDD, Clean Architecture, Elegant Objects, C4 Model, Google
 - Programming Motherfucker Manifesto
+Ansible, Zabbix, Grafana, Kibana, Zipkin;

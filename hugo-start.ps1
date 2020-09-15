@@ -1,4 +1,7 @@
-Start-Process -NoNewWindow -FilePath "hugo.exe" -ArgumentList "serve", "--gc", "--noHTTPCache", "--forceSyncStatic", "--disableFastRender"
+
+$args = "serve", "--gc", "--noHTTPCache", "--forceSyncStatic", "--disableFastRender", "--templateMetrics", "--templateMetricsHints", "--ignoreCache"
+
+Start-Process -NoNewWindow -FilePath "hugo.exe" -ArgumentList $args
 
 $watcher = New-Object System.IO.FileSystemWatcher
 $watcher.IncludeSubdirectories = $true
@@ -15,7 +18,7 @@ $action =
         Start-Sleep -Milliseconds 500
         Write-Host "Waiting"
     }
-    Start-Process -NoNewWindow -FilePath "hugo.exe" -ArgumentList "serve", "--gc", "--noHTTPCache", "--forceSyncStatic", "--disableFastRender"
+    Start-Process -NoNewWindow -FilePath "hugo.exe" -ArgumentList $args
 }
 
 Register-ObjectEvent $watcher 'Changed' -Action $action
