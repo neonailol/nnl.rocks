@@ -1,0 +1,46 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+    {{ $link := .RelPermalink }}
+    {{ $target := "" }}
+    {{ with .Params.external_link }}
+      {{ $link = . }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <div class="card-simple">
+      <span class="article-date">
+        <time datetime="{{.Page.Params.digest_date}}" itemprop="datePublished dateModified">
+          {{.Page.Params.digest_date}}
+        </time>
+      </span>
+      <span class="middot-divider"></span>
+      <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
+        <span itemprop="headline">
+          {{ .Title }}
+        </span>
+      </a>
+      <span class="middot-divider"></span>
+      <span class="article-reading-time">
+        <small>{{ $.ReadingTime }} {{ i18n "minute_read" }}</small>
+      </span>
+      {{ range site.Taxonomies.tags }}
+      <span class="middot-divider"></span>
+      <a href="{{.Page.RelPermalink}}">{{.Page.Title}}</a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}

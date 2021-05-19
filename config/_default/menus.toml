@@ -8,10 +8,15 @@
   url = "#about"
   weight = 10
 
-[[main]]
-  name = "Digest"
-  url = "digest"
-  weight = 20
+# [[main]]
+#   name = "Log"
+#   url = "log"
+#   weight = 20
+
+# [[main]]
+#   name = "Digest"
+#   url = "digest"
+#   weight = 20
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
