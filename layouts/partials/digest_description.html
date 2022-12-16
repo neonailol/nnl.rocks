@@ -1,9 +1,0 @@
-<div class="media-body">
-    <p class="mt-1 mb-1 pr-3">{{ .description | markdownify}}</p>
-    {{- $url := .url -}}
-    <p class="mb-0">{{ printf "<%s>" $url | markdownify }}</p>
-    {{- if .image -}}
-    {{- $image := .image -}}
-    <img class="pr-3 mb-2 mt-2" src="./{{ $image }}">
-    {{- end -}}
-</div>

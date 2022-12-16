@@ -1,9 +1,0 @@
-{{- $date := .Get "date" -}}
-
-<ul class="list-unstyled">
-    {{ range .Site.Data.digest }}
-    {{ range (index . $date) }}
-    {{ partial "digest_entry" . }}
-    {{ end }}
-    {{ end }}
-</ul>

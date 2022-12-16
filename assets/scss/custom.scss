@@ -1,11 +1,14 @@
-.media i {
-    font-size: 2rem;
+.avatar {
+    width: 270px;
+    height: 270px;
 }
 
-.article-container {
-    max-width: 900px;
+.avatar-wrapper {
+    width: 225px;
+    height: 225px;
 }
 
-.article-style {
-  overflow-x: visible
+.ul-interests {
+    text-align: left;
+    padding-left: 35%;
 }
