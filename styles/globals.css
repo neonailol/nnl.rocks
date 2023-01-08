@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+	@apply text-4xl;
+}
+
+svg {
+	@apply fill-black dark:fill-white
+}
+
+body {
+	@apply antialiased flex flex-col place-items-center h-screen bg-gray-50 dark:bg-slate-800 text-slate-800 dark:text-gray-50;
+}
+
+header {
+	@apply max-w-2xl min-w-[16rem] w-full border-b p-0 text-center;
+}
+
+nav {
+	@apply px-2 sm:px-4 rounded;
+}
+
+nav > div {
+	@apply flex flex-row justify-between max-w-2xl;
+}
+
+#header-logo {
+	@apply flex flex-row;
+}
+
+#header-logo > img {
+	@apply w-14 h-14 mr-2 dark:invert;
+}
+
+#header-logo > span {
+	@apply self-center text-xl font-semibold whitespace-nowrap;
+}
+
+#header-bookmarks {
+	@apply self-center font-medium text-xl
+}
+
+#theme-toggle {
+	@apply rounded-lg text-sm p-2.5;
+}
+
+#theme-toggle > svg {
+	@apply w-5 h-5;
+}
+
+main {
+	@apply pt-5 max-w-2xl grow prose dark:prose-invert;
+}
+
+#index {
+	@apply grid grid-flow-row-dense min-w-fit grid-cols-2 justify-items-center gap-y-2;
+}
+
+#about {
+	@apply max-w-[16rem] min-w-[16rem] grid grid-flow-row-dense grid-cols-3 justify-items-center col-span-2 md:col-span-1 gap-y-2;
+}
+
+#about > img {
+	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 ring-2 ring-slate-800 dark:ring-gray-50;
+}
+
+#about > h2 {
+	@apply text-center col-span-3 m-0;
+}
+
+#about > a > svg {
+	@apply w-12 h-12 hover:fill-fuchsia-600;
+}
+
+#interests {
+	@apply text-center col-span-2 md:col-span-1 max-w-[16rem] min-w-[16rem];
+}
+
+#interests > h2 {
+	@apply m-0;
+}
+
+#interests > ul {
+	@apply p-0 pt-2 list-none;
+}
+
+#skills {
+	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
+}
+
+#skills > h2 {
+	@apply m-1;
+}
+
+#skills > ul {
+	@apply flex flex-wrap justify-center gap-x-4 pt-2 px-4 list-none;
+}
+
+footer {
+	@apply p-2 border-t max-w-2xl min-w-[16rem] w-full flex flex-col items-center md:flex-row md:justify-between;
+}
+
+footer > span {
+	@apply text-sm text-gray-400 dark:text-white;
+}
+
+#bookmarks-header {
+	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
+}
+
+#bookmarks-header > h2 {
+	@apply m-0 pb-4 border-b;
+}
+
+#bookmarks-container {
+	@apply grid grid-flow-row-dense min-w-fit grid-cols-1 justify-items-center gap-y-2;
+}
+
+#bookmarks-filters > div > h3 {
+	@apply inline-block text-center w-full m-0;
+}
+
+
+#bookmarks-filters > div > ul {
+	@apply flex flex-wrap justify-center gap-x-4 pt-0 px-4 m-0 border-b list-none;
+}
+
+#bookmarks-list > ul {
+	@apply list-none;
+}
