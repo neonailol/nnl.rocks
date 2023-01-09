@@ -118,8 +118,6 @@ export const about: About = {
 		'Google',
 		'Ansible',
 		'Zabbix',
-		'Grafana',
-		'Kibana',
 		'Zipkin',
 		'Programming Motherfucker Manifesto',
 	]

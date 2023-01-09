@@ -2,68 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-h2 {
-	@apply text-4xl;
-}
-
-svg {
-	@apply fill-black dark:fill-white
-}
-
 body {
 	@apply antialiased flex flex-col place-items-center h-screen bg-gray-50 dark:bg-slate-800 text-slate-800 dark:text-gray-50;
-}
-
-#header-bookmarks {
-	@apply self-center font-medium text-xl
 }
 
 main {
 	@apply pt-5 max-w-2xl grow prose dark:prose-invert;
 }
 
-#index {
+main > div {
 	@apply grid grid-flow-row-dense min-w-fit grid-cols-2 justify-items-center gap-y-2;
 }
 
-#about {
-	@apply max-w-[16rem] min-w-[16rem] grid grid-flow-row-dense grid-cols-3 justify-items-center col-span-2 md:col-span-1 gap-y-2;
-}
-
-#about > img {
-	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 ring-2 ring-slate-800 dark:ring-gray-50;
-}
-
-#about > h2 {
-	@apply text-center col-span-3 m-0;
-}
-
-#about > a > svg {
-	@apply w-12 h-12 hover:fill-fuchsia-600;
-}
-
-#interests {
-	@apply text-center col-span-2 md:col-span-1 max-w-[16rem] min-w-[16rem];
-}
-
-#interests > h2 {
-	@apply m-0;
-}
-
-#interests > ul {
-	@apply p-0 pt-2 list-none;
-}
-
-#skills {
-	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
-}
-
-#skills > h2 {
-	@apply m-1;
-}
-
-#skills > ul {
-	@apply flex flex-wrap justify-center gap-x-4 pt-2 px-4 list-none;
+#header-bookmarks {
+	@apply self-center font-medium text-xl
 }
 
 #bookmarks-header {
@@ -81,7 +33,6 @@ main {
 #bookmarks-filters > div > h3 {
 	@apply inline-block text-center w-full m-0;
 }
-
 
 #bookmarks-filters > div > ul {
 	@apply flex flex-wrap justify-center gap-x-4 pt-0 px-4 m-0 border-b list-none;

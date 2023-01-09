@@ -1,0 +1,12 @@
+
+.skills {
+	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
+}
+
+.skills > h2 {
+	@apply m-1;
+}
+
+.skills > ul {
+	@apply flex flex-wrap justify-center gap-x-4 pt-2 px-4 list-none;
+}
