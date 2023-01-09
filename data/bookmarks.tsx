@@ -1,21 +1,29 @@
 
-import Books from './bookmarks/books';
-import Web from './bookmarks/web';
+import { books } from './bookmarks/books';
+import { web } from './bookmarks/web';
 
 module.exports = {
-	latest: getLatest(5),
-	tags: getAllTags(),
-	books: Books().elements,
-	web: Web().elements,
+	latest: latest(5),
+	tags: tags(),
+	books: books,
+	web: web,
 }
 
-function getLatest(count: number) {
-	const all = [...Books().elements, ...Web().elements];
-	return all.sort((l, r) => l.date.localeCompare(r.date)).reverse().slice(0, count);
+const bookmarks = [...books.bookmarks, ...web.bookmarks];
+
+function latest(count: number) {
+	return bookmarks.sort((l, r) => l.date.localeCompare(r.date)).reverse().slice(0, count);
 }
 
-function getAllTags() {
-	const all = [...Books().elements, ...Web().elements];
-	const tags = all.flatMap(l => l.tags).sort();
+function tags() {
+	const tags = bookmarks.flatMap(it => it.tags).sort();
 	return [...new Set(tags)];
+}
+
+function categories() {
+	return [books, web].map(it => it.title).sort()
+}
+
+function cross() {
+
 }

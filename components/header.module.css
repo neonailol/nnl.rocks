@@ -1,0 +1,32 @@
+.header {
+	@apply max-w-2xl min-w-[16rem] w-full border-b p-0 text-center;
+}
+
+.header > nav {
+	@apply px-2 sm:px-4 rounded;
+}
+
+.header > nav > div {
+	@apply flex flex-row justify-between max-w-2xl;
+}
+
+.logo {
+	@apply flex flex-row;
+}
+
+.logo > svg {
+	@apply w-14 h-14 mr-2;
+}
+
+.logo > h1 {
+	@apply self-center text-xl font-semibold whitespace-nowrap;
+}
+
+.theme {
+	@apply rounded-lg text-sm p-2.5;
+}
+
+.theme > svg {
+	@apply w-5 h-5;
+}
+

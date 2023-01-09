@@ -14,40 +14,8 @@ body {
 	@apply antialiased flex flex-col place-items-center h-screen bg-gray-50 dark:bg-slate-800 text-slate-800 dark:text-gray-50;
 }
 
-header {
-	@apply max-w-2xl min-w-[16rem] w-full border-b p-0 text-center;
-}
-
-nav {
-	@apply px-2 sm:px-4 rounded;
-}
-
-nav > div {
-	@apply flex flex-row justify-between max-w-2xl;
-}
-
-#header-logo {
-	@apply flex flex-row;
-}
-
-#header-logo > img {
-	@apply w-14 h-14 mr-2 dark:invert;
-}
-
-#header-logo > span {
-	@apply self-center text-xl font-semibold whitespace-nowrap;
-}
-
 #header-bookmarks {
 	@apply self-center font-medium text-xl
-}
-
-#theme-toggle {
-	@apply rounded-lg text-sm p-2.5;
-}
-
-#theme-toggle > svg {
-	@apply w-5 h-5;
 }
 
 main {
@@ -96,14 +64,6 @@ main {
 
 #skills > ul {
 	@apply flex flex-wrap justify-center gap-x-4 pt-2 px-4 list-none;
-}
-
-footer {
-	@apply p-2 border-t max-w-2xl min-w-[16rem] w-full flex flex-col items-center md:flex-row md:justify-between;
-}
-
-footer > span {
-	@apply text-sm text-gray-400 dark:text-white;
 }
 
 #bookmarks-header {

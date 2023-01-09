@@ -2,12 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { about } from '../data/about'
 import { Icon } from '@iconify/react';
-import themeLightDark from '@iconify/icons-mdi/theme-light-dark';
 import githubIcon from '@iconify/icons-fa-brands/github';
 import twitterIcon from '@iconify/icons-fa-brands/twitter';
 import telegramIcon from '@iconify/icons-fa-brands/telegram';
-import { useTheme } from 'next-themes'
-import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer'
 
 let icons = new Map<string, any>([
 	["github", githubIcon],
@@ -16,7 +15,6 @@ let icons = new Map<string, any>([
 ])
 
 export default function Home() {
-	const { theme, setTheme } = useTheme()
 	return (
 		<>
 			<Head>
@@ -25,19 +23,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			</Head>
-			<header>
-				<nav>
-					<div>
-						<Link href={"/"} id="header-logo">
-							<Image src="/favicon.svg" alt="Site Logo" width={0} height={0} priority />
-							<span>{about.name}</span>
-						</Link>
-						<button id="theme-toggle" type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-							<Icon icon={themeLightDark} />
-						</button>
-					</div>
-				</nav>
-			</header>
+			<Header />
 			<main>
 				<div id="index">
 					<div id="about">
@@ -59,24 +45,7 @@ export default function Home() {
 					</div>
 				</div>
 			</main>
-			<footer>
-				<span>© 2023 Neonailol</span>
-				<span>
-					<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
-				</span>
-				<span>
-					<a href="https://nextjs.org/">next.js</a>
-				</span>
-				<span>
-					<a href="https://tailwindcss.com/">tailwindcss</a>
-				</span>
-				<span>
-					<a href="https://flowbite.com/">flowbite</a>
-				</span>
-				<span>
-					<a href="https://iconify.design/">iconify</a>
-				</span>
-			</footer>
+			<Footer />
 		</>
 	)
 }
