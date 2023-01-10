@@ -3,7 +3,7 @@
 }
 
 .about > img {
-	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 ring-2 ring-slate-800;
+	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 outline outline-2 outline-slate-800;
 }
 
 .about > h2 {
