@@ -7,7 +7,7 @@ body {
 }
 
 main {
-	@apply pt-5 max-w-2xl grow prose dark:prose-invert;
+	@apply pt-5 max-w-2xl grow format dark:format-invert;
 }
 
 main > div {

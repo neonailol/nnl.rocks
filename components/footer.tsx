@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<>
 			<footer className={styles.footer}>
-				<span>© 2023 {about.name}</span>
+				<span>© {new Date().getFullYear()} {about.name}</span>
 				<span>
 					<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
 				</span>

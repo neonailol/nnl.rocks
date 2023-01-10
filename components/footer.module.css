@@ -4,5 +4,5 @@
 }
 
 .footer > span {
-	@apply text-sm text-gray-400 dark:text-white px-1;
+	@apply text-sm text-gray-500 px-1;
 }

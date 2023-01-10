@@ -5,6 +5,10 @@
 	"engines": {
 		"node": "19.4.0"
 	},
+	"browserslist": [
+		"last 3 years",
+		"not dead"
+	],
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build && next export",
@@ -12,31 +16,33 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@next/font": "13.1.1",
-		"@types/node": "18.11.18",
-		"@types/react": "18.0.26",
-		"@types/react-dom": "18.0.10",
-		"eslint": "8.31.0",
-		"eslint-config-next": "13.1.1",
-		"next": "13.1.1",
-		"next-themes": "0.2.1",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"typescript": "4.9.4"
+		"@next/bundle-analyzer": "^13.1.1",
+		"@next/font": ">=13.1.1",
+		"@types/node": ">=18.11.18",
+		"@types/react": ">=18.0.26",
+		"@types/react-dom": ">=18.0.10",
+		"eslint": ">=8.31.0",
+		"eslint-config-next": ">=13.1.1",
+		"next": ">=13.1.1",
+		"next-themes": ">=0.2.1",
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0",
+		"typescript": ">=4.9.4"
 	},
 	"devDependencies": {
-		"@iconify/icons-fa-brands": "1.2.4",
-		"@iconify/icons-mdi": "1.2.38",
-		"@iconify/react": "4.0.1",
-		"@svgr/webpack": "^6.5.1",
-		"@tailwindcss/aspect-ratio": "0.4.2",
-		"@tailwindcss/container-queries": "0.1.0",
-		"@tailwindcss/forms": "0.5.3",
-		"@tailwindcss/line-clamp": "0.4.2",
-		"@tailwindcss/typography": "0.5.8",
-		"autoprefixer": "10.4.13",
-		"flowbite": "1.6.0",
-		"postcss": "8.4.21",
-		"tailwindcss": "3.2.4"
+		"@iconify/icons-fa-brands": ">=1.2.4",
+		"@iconify/icons-mdi": ">=1.2.38",
+		"@iconify/react": ">=4.0.1",
+		"@svgr/webpack": ">=6.5.1",
+		"@tailwindcss/aspect-ratio": ">=0.4.2",
+		"@tailwindcss/container-queries": ">=0.1.0",
+		"@tailwindcss/forms": ">=0.5.3",
+		"@tailwindcss/line-clamp": ">=0.4.2",
+		"@tailwindcss/typography": ">=0.5.8",
+		"autoprefixer": ">=10.4.13",
+		"flowbite": ">=1.6.0",
+		"flowbite-typography": "^1.0.3",
+		"postcss": ">=8.4.21",
+		"tailwindcss": ">=3.2.4"
 	}
 }

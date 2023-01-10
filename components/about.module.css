@@ -3,17 +3,17 @@
 }
 
 .about > img {
-	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 ring-2 ring-slate-800 dark:ring-gray-50;
+	@apply rounded-full w-64 h-64 col-span-3 m-0 p-1 ring-2 ring-slate-800;
 }
 
 .about > h2 {
 	@apply text-center col-span-3 m-0;
 }
 
-.about > a > svg {
-	@apply w-12 h-12 hover:fill-fuchsia-600;
+.about > a {
+	@apply hover:text-fuchsia-600
 }
 
-.about > a > svg > path {
-	@apply hover:fill-fuchsia-600;
+.about > a > svg {
+	@apply w-12 h-12 fill-current;
 }

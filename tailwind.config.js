@@ -2,7 +2,7 @@
 module.exports = {
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx,css}',
+		'./components/**/*.{js,ts,jsx,tsx}',
 		'./app/**/*.{js,ts,jsx,tsx}',
 	],
 	darkMode: 'class',
@@ -15,6 +15,7 @@ module.exports = {
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/container-queries'),
-		require('flowbite/plugin')
+		require('flowbite/plugin'),
+		require('flowbite-typography'),
 	],
 }
