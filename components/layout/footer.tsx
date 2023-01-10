@@ -1,4 +1,4 @@
-import { about } from '../data/about'
+import { about } from '../../data/about'
 import styles from './footer.module.css'
 
 export default function Footer() {

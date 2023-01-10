@@ -1,7 +1,7 @@
-import { about } from '../data/about'
+import { about } from '../../data/about'
 import { Icon } from '@iconify/react';
 import { useTheme } from 'next-themes'
-import Favicon from '../public/favicon.svg'
+import Favicon from '../../public/favicon.svg'
 import Link from 'next/link';
 import styles from './header.module.css'
 import themeLightDark from '@iconify/icons-mdi/theme-light-dark';

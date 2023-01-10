@@ -1,8 +1,8 @@
 import { about } from '../data/about'
-import Footer from '../components/footer'
+import Footer from '../components/layout/footer'
 import Head from 'next/head'
-import Header from '../components/header';
-import Main from '../components/main';
+import Header from '../components/layout/header';
+import Layout, { LayoutType } from '../components/layout/main';
 
 export default function Home() {
 	return (
@@ -14,7 +14,7 @@ export default function Home() {
 				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			</Head>
 			<Header />
-			<Main />
+			<Layout layoutType={LayoutType.Home} />
 			<Footer />
 		</>
 	)

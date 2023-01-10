@@ -1,4 +1,4 @@
-import { about } from '../data/about'
+import { about } from '../../data/about'
 import { Icon } from '@iconify/react/dist/offline';
 import Image from 'next/image'
 import SocialIcon from './social'

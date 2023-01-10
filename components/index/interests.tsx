@@ -1,4 +1,4 @@
-import { about } from '../data/about'
+import { about } from '../../data/about'
 import styles from './interests.module.css'
 
 export default function Interests() {
