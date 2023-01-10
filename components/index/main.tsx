@@ -7,7 +7,7 @@ export default function Main() {
 	return (
 		<>
 			<main>
-				<div>
+				<div className={styles.content}>
 					<About />
 					<Interests />
 					<Skills />

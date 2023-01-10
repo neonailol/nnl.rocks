@@ -1,7 +1,12 @@
 
 export interface Category {
 	title: string,
+	type: CategoryType,
 	bookmarks: Array<Bookmark>
+}
+
+export enum CategoryType {
+	Book, Article
 }
 
 export interface Bookmark {

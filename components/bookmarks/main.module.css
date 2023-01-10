@@ -1,0 +1,59 @@
+.content {
+	@apply flex flex-col;
+}
+
+.header {
+	@apply text-center col-span-2 w-full;
+}
+
+.header > h2 {
+	@apply m-0 pb-4 border-b;
+}
+
+.filters {
+	@apply col-span-2 w-full;
+}
+
+.filters > section > h3 {
+	@apply inline-block text-center w-full m-0;
+}
+
+.filters > section > ul {
+	@apply flex flex-wrap justify-center gap-x-4 pt-0 px-4 m-0 border-b list-none;
+}
+
+.list {
+	@apply col-span-2 w-full text-center;
+}
+
+.list > ul {
+	@apply list-none p-0;
+}
+
+.list > ul > li {
+	@apply p-0;
+}
+
+.list > ul > li > a {
+	@apply flex flex-row place-items-center p-1 border border-gray-50 rounded shadow no-underline hover:text-fuchsia-600 visited:text-fuchsia-800;
+}
+
+.list > ul > li > a > svg {
+	@apply w-[3rem] h-[3rem] min-w-[3rem] min-h-[3rem];
+}
+
+.list > ul > li > a > time {
+	@apply m-0 mx-2 font-normal;
+}
+
+.list > ul > li > a > div {
+	@apply truncate underline text-left grow;
+}
+
+.list > ul > li > a > div > h4 {
+	@apply m-0 text-xl font-bold tracking-tight;
+}
+
+.list > ul > li > a > div > p {
+	@apply m-0 text-xs font-normal truncate;
+}

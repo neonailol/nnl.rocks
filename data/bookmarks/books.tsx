@@ -1,7 +1,8 @@
-import { Bookmark, Category } from "./type"
+import { Category, CategoryType } from "./type"
 
 export const books: Category = {
 	title: "Books",
+	type: CategoryType.Book,
 	bookmarks: [
 		{
 			title: 'Book 1',

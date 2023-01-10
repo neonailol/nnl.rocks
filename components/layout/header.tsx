@@ -17,6 +17,9 @@ export default function Header() {
 							<Favicon />
 							<h1>{about.name}</h1>
 						</Link>
+						<Link href={"/bookmarks"} className={styles.bookmarks}>
+							<h2>Bookmarks</h2>
+						</Link>
 						<button className={styles.theme} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
 							<Icon icon={themeLightDark} />
 						</button>

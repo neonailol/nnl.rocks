@@ -1,5 +1,5 @@
 .header {
-	@apply max-w-2xl min-w-[16rem] w-full border-b p-0 text-center;
+	@apply w-full border-b p-0 text-center;
 }
 
 .header > nav {
@@ -7,7 +7,7 @@
 }
 
 .header > nav > div {
-	@apply flex flex-row justify-between max-w-2xl;
+	@apply flex flex-row justify-between;
 }
 
 .logo {
@@ -22,11 +22,14 @@
 	@apply self-center text-xl font-semibold whitespace-nowrap;
 }
 
+.bookmarks {
+	@apply self-center font-medium text-lg
+}
+
 .theme {
-	@apply rounded-lg text-sm p-2.5;
+	@apply rounded-lg text-sm p-0;
 }
 
 .theme > svg {
 	@apply w-5 h-5;
 }
-

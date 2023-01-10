@@ -3,41 +3,13 @@
 @tailwind utilities;
 
 body {
-	@apply antialiased flex flex-col place-items-center h-screen bg-gray-50 dark:bg-slate-800 text-slate-800 dark:text-gray-50;
+	@apply antialiased bg-gray-50 dark:bg-slate-800 text-slate-800 dark:text-gray-50 overflow-y-scroll;
+}
+
+#__next {
+	@apply flex flex-col place-items-center h-screen max-w-3xl min-w-max mx-auto mt-0;
 }
 
 main {
-	@apply pt-5 max-w-2xl grow format dark:format-invert;
-}
-
-main > div {
-	@apply grid grid-flow-row-dense min-w-fit grid-cols-2 justify-items-center gap-y-2;
-}
-
-#header-bookmarks {
-	@apply self-center font-medium text-xl
-}
-
-#bookmarks-header {
-	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
-}
-
-#bookmarks-header > h2 {
-	@apply m-0 pb-4 border-b;
-}
-
-#bookmarks-container {
-	@apply grid grid-flow-row-dense min-w-fit grid-cols-1 justify-items-center gap-y-2;
-}
-
-#bookmarks-filters > div > h3 {
-	@apply inline-block text-center w-full m-0;
-}
-
-#bookmarks-filters > div > ul {
-	@apply flex flex-wrap justify-center gap-x-4 pt-0 px-4 m-0 border-b list-none;
-}
-
-#bookmarks-list > ul {
-	@apply list-none;
+	@apply pt-5 w-full grow format dark:format-invert max-w-3xl;
 }

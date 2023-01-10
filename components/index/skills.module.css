@@ -1,6 +1,6 @@
 
 .skills {
-	@apply text-center col-span-2 max-w-2xl min-w-[16rem];
+	@apply text-center col-span-2 min-w-[16rem];
 }
 
 .skills > h2 {
