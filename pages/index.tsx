@@ -14,7 +14,7 @@ export default function Home() {
 				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			</Head>
 			<Header />
-			<Layout layoutType={LayoutType.Home} />
+			<Layout layoutType={LayoutType.Home} params={undefined} />
 			<Footer />
 		</>
 	)

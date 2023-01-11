@@ -1,6 +1,6 @@
 
 .footer {
-	@apply w-full border-t py-2 text-center flex flex-row justify-between;
+	@apply flex flex-row justify-between min-w-max w-full border-t py-2 text-center;
 }
 
 .footer > span {

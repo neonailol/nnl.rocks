@@ -8,7 +8,7 @@ export const articles: Category = {
 			title: 'Web 1',
 			link: 'Web 1 Link',
 			date: '2020-11-07',
-			tags: ['qqq'],
+			tags: ['qqq', 'we ew'],
 		},
 		{
 			title: 'Web 2',
@@ -20,7 +20,7 @@ export const articles: Category = {
 			title: 'Web 3',
 			link: 'Web 3 Link',
 			date: '2009-10-07',
-			tags: ['eee'],
+			tags: ['eee', 'asd fff qqq'],
 		}
 	]
 }

@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Header from '../components/layout/header';
 import Layout, { LayoutType } from '../components/layout/main';
 
-export default function Home() {
+export default function Bookmarks() {
 	return (
 		<>
 			<Head>
@@ -14,7 +14,7 @@ export default function Home() {
 				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			</Head>
 			<Header />
-			<Layout layoutType={LayoutType.Bookmarks} />
+			<Layout layoutType={LayoutType.Bookmarks} params={undefined} />
 			<Footer />
 		</>
 	)

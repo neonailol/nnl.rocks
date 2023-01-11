@@ -1,11 +1,12 @@
-import { bookmarks, categories, latest, tags } from "./utils";
-import styles from './main.module.css'
-import { Bookmark } from "../../data/bookmarks/type";
+import { bookmarks, categories, latest, slugs, tags } from "./utils";
+import { BookmarkView } from "./types";
 import { Icon } from "@iconify/react/dist/offline";
 import CategoryIcon from "./icon";
-import { BookmarkView } from "./types";
+import Link from "next/link";
+import styles from './main.module.css'
+import { CategoryType } from "../../data/bookmarks/type";
 
-export default function Main() {
+export default function Main({ data }: { data: BookmarkView[] }) {
 	return (
 		<>
 			<main>
@@ -17,25 +18,36 @@ export default function Main() {
 						<section>
 							<h3>Types</h3>
 							<ul>
-								{categories().map(it => <li key={it}>{it}</li>)}
+								{categories().map(it => asTagCloudElement(it))}
 							</ul>
 						</section>
 						<section>
 							<h3>Tags</h3>
 							<ul>
-								{tags().map(it => <li key={it}>{it}</li>)}
+								{tags().map(it => asTagCloudElement(it))}
 							</ul>
 						</section>
 					</div>
 					<section className={styles.list}>
 						<ul>
-							{latest(5).map(it => bookmark(it))}
+							{bookmarkList(data)}
 						</ul>
 					</section>
 				</div>
 			</main>
 		</>
 	)
+}
+
+function asTagCloudElement(it: { title: string; slug: string; }): JSX.Element {
+	return <li key={it.slug}><Link href={`/bookmarks/${it.slug}`}>{it.title}</Link></li>;
+}
+
+function bookmarkList(data: BookmarkView[] | undefined) {
+	if (data === undefined) {
+		return latest(10).map(it => bookmark(it))
+	}
+	return data.map(it => bookmark(it))
 }
 
 function bookmark(it: BookmarkView): JSX.Element {

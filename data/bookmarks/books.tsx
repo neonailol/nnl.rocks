@@ -12,13 +12,13 @@ export const books: Category = {
 		},
 		{
 			title: 'Book 2',
-			link: 'Book 1 Link',
+			link: 'Book 2 Link',
 			date: '2011-10-07',
 			tags: ['qqq', 'www'],
 		},
 		{
 			title: 'Book 3',
-			link: 'Book 1 Link',
+			link: 'Book 3 Link',
 			date: '2022-10-07',
 			tags: ['eee'],
 		}

@@ -7,7 +7,7 @@ body {
 }
 
 #__next {
-	@apply flex flex-col place-items-center h-screen max-w-3xl min-w-max mx-auto mt-0;
+	@apply flex flex-col place-items-center h-screen max-w-3xl min-w-0 mx-auto mt-0;
 }
 
 main {
