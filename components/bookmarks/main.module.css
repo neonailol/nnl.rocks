@@ -22,6 +22,10 @@
 	@apply flex flex-wrap justify-center gap-x-4 pt-0 px-4 m-0 border-b list-none;
 }
 
+.active {
+	@apply text-fuchsia-600
+}
+
 .list {
 	@apply col-span-2 w-full text-center;
 }
