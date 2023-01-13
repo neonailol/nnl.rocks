@@ -5,22 +5,22 @@ export const articles: Category = {
 	type: CategoryType.Article,
 	bookmarks: [
 		{
-			title: 'Web 1',
-			link: 'Web 1 Link',
-			date: '2020-11-07',
-			tags: ['qqq', 'we ew'],
+			title: 'Essential Books That Every Programmer Should Read',
+			link: 'https://dmshvetsov.medium.com/essential-books-that-every-programmer-should-read-a61565095781',
+			date: '2019-02-11',
+			tags: ['Programming', 'Books', 'Recomendations'],
 		},
 		{
-			title: 'Web 2',
-			link: 'Web 2 Link111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
-			date: '2013-10-07',
-			tags: ['qqq', 'yy', 'ccc'],
+			title: 'Clean Architecture with Java 11',
+			link: 'https://medium.com/slalom-build/clean-architecture-with-java-11-f78bba431041',
+			date: '2019-02-04',
+			tags: ['Java', 'Clean Architecture', 'Architecture', 'Software Architecture'],
 		},
 		{
-			title: 'Web 3',
-			link: 'Web 3 Link',
-			date: '2009-10-07',
-			tags: ['eee', 'asd fff qqq'],
+			title: 'The Forgotten History of OOP',
+			link: 'https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f',
+			date: '2018-11-01',
+			tags: ['Programming', 'OOP', 'JavaScript', 'Functional Programming'],
 		}
 	]
 }

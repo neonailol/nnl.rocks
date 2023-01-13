@@ -5,22 +5,25 @@ export const books: Category = {
 	type: CategoryType.Book,
 	bookmarks: [
 		{
-			title: 'Book 1',
-			link: 'Book 1 Link',
-			date: '2020-10-07',
-			tags: ['qqq'],
+			title: 'Five Lines of Code: How and when to refactor',
+			link: 'https://www.manning.com/books/five-lines-of-code',
+			date: '2021-10-26',
+			tags: ['OOP', 'Refactoring'],
+			isbn: 9781617298318
 		},
 		{
-			title: 'Book 2',
-			link: 'Book 2 Link',
-			date: '2011-10-07',
-			tags: ['qqq', 'www'],
+			title: 'Rust in Action: Systems programming concepts and techniques',
+			link: 'https://www.manning.com/books/rust-in-action',
+			date: '2021-08-10',
+			tags: ['Rust', 'Systems Programming'],
+			isbn: 9781617294556
 		},
 		{
-			title: 'Book 3',
-			link: 'Book 3 Link',
-			date: '2022-10-07',
-			tags: ['eee'],
+			title: 'Programming Rust',
+			link: 'https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/',
+			date: '2021-07-20',
+			tags: ['Rust', 'Systems Programming'],
+			isbn: 9781492052548
 		}
 	]
 }
