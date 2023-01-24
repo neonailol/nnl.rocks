@@ -5,10 +5,16 @@ export const videos: Category = {
 	type: CategoryType.Video,
 	bookmarks: [
 		{
-			title: 'A Firehose of Rust, for busy people who know some C++ ',
+			title: 'A Firehose of Rust, for busy people who know some C++',
 			link: 'https://youtu.be/IPmRDS0OSxM',
 			date: '2021-06-01',
 			tags: ['Programming', 'Rust', 'C++'],
+		},
+		{
+			title: 'Herbert Wolverson - Procedural Map Generation Techniques',
+			link: 'https://youtu.be/TlLIOgWYVpI',
+			date: '2020-10-15',
+			tags: ['Programming', 'GameDev', 'Procedural Generation'],
 		},
 	]
 }
