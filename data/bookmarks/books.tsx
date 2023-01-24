@@ -24,6 +24,13 @@ export const books: Category = {
 			date: '2021-07-20',
 			tags: ['Rust', 'Systems Programming'],
 			isbn: 9781492052548
+		},
+		{
+			title: 'The Tipping Point: How Little Things Can Make a Big Difference',
+			link: 'https://www.amazon.com/Tipping-Point-Little-Things-Difference/dp/0316346624',
+			date: '2002-01-07',
+			tags: ['Psychology'],
+			isbn: 9780316346627
 		}
 	]
 }
