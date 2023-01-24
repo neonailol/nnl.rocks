@@ -6,7 +6,7 @@ export interface Category {
 }
 
 export enum CategoryType {
-	Book, Article
+	Book, Article, Video
 }
 
 export interface Bookmark {

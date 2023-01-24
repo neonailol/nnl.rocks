@@ -1,9 +1,10 @@
 import { articles } from './bookmarks/articles';
 import { books } from './bookmarks/books';
+import { videos } from './bookmarks/videos';
 import { Category } from './bookmarks/type';
 
 export function bookmarks(): Array<Category> {
-	return [books, articles];
+	return [books, articles, videos];
 }
 
 export function parseCategory(slug: string | string[] | undefined): string | undefined {
