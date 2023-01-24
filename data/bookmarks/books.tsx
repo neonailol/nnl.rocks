@@ -31,6 +31,13 @@ export const books: Category = {
 			date: '2002-01-07',
 			tags: ['Psychology'],
 			isbn: 9780316346627
+		},
+		{
+			title: 'Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems',
+			link: 'https://dataintensive.net/',
+			date: '2017-05-02',
+			tags: ['Software Architecture', 'Big Data'],
+			isbn: 9781449373320
 		}
 	]
 }
