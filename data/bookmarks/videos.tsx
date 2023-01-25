@@ -16,5 +16,11 @@ export const videos: Category = {
 			date: '2020-10-15',
 			tags: ['Programming', 'GameDev', 'Procedural Generation'],
 		},
+		{
+			title: 'Cellular Automata & Procedural Generation | Game Development Tutorial',
+			link: 'https://youtu.be/slTEz6555Ts',
+			date: '2020-09-19',
+			tags: ['Programming', 'GameDev', 'Procedural Generation'],
+		}
 	]
 }

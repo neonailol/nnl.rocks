@@ -14,7 +14,7 @@ export const articles: Category = {
 			title: 'Clean Architecture with Java 11',
 			link: 'https://medium.com/slalom-build/clean-architecture-with-java-11-f78bba431041',
 			date: '2019-02-04',
-			tags: ['Java', 'Clean Architecture', 'Architecture', 'Software Architecture'],
+			tags: ['Java', 'Clean Architecture', 'Software Architecture'],
 		},
 		{
 			title: 'The Forgotten History of OOP',
