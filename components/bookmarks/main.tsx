@@ -76,11 +76,16 @@ function bookmark(it: BookmarkView): JSX.Element {
 	return <>
 		<li key={it.link}>
 			<a href={it.link}>
-				<Icon icon={CategoryIcon(it.type)} />
-				<time dateTime={it.date}>{it.date}</time>
-				<div>
-					<h4>{it.title}</h4>
-					<p>{it.link}</p>
+				<div className={styles.bookmark_top}>
+					<Icon icon={CategoryIcon(it.type)} />
+					<time dateTime={it.date}>{it.date}</time>
+					<div>
+						<h4>{it.title}</h4>
+						<p>{it.link}</p>
+					</div>
+				</div>
+				<div className={styles.bookmark_bottom}>
+					<ul>{it.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
 				</div>
 			</a>
 		</li>
