@@ -14,5 +14,6 @@ export interface Bookmark {
 	link: string,
 	date: string,
 	tags: Array<string>,
-	isbn?: number
+	isbn?: number,
+	alternative?: string
 }

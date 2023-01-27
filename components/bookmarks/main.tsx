@@ -1,11 +1,11 @@
-import { categories, latest, tags } from "./utils";
 import { BookmarkView } from "./types";
+import { categories, latest, tags } from "./utils";
 import { Icon } from "@iconify/react/dist/offline";
+import { parseCategory, parseTag } from "../../data/bookmarks";
 import { useRouter } from 'next/router'
 import CategoryIcon from "./icon";
 import Link from "next/link";
 import styles from './main.module.css'
-import { parseCategory, parseTag } from "../../data/bookmarks";
 
 export default function Main({ data }: { data: BookmarkView[] }) {
 	const router = useRouter()
