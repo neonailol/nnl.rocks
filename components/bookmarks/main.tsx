@@ -69,7 +69,7 @@ function bookmarkList(data: BookmarkView[] | undefined) {
 	if (data === undefined) {
 		return latest(10).map(it => bookmark(it))
 	}
-	return data.map(it => bookmark(it))
+	return data.sort((l, r) => l.date.localeCompare(r.date)).map(it => bookmark(it)).reverse()
 }
 
 function bookmark(it: BookmarkView): JSX.Element {
