@@ -46,6 +46,13 @@ export const books: Category = {
 			tags: ['Ficton', 'Science Fiction', 'Post Apocalyptic'],
 			isbn: 9791191824001,
 			alternative: 'The Greenhouse at the End of the Earth',
+		},
+		{
+			title: 'Hands-on Rust: Effective Learning through 2D Game Development and Play',
+			link: 'https://hands-on-rust.com/',
+			date: '2021-08-03',
+			tags: ['Rust', 'GameDev'],
+			isbn: 9781680508161,
 		}
 	]
 }
