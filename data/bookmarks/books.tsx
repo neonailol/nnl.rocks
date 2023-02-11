@@ -53,6 +53,20 @@ export const books: Category = {
 			date: '2021-08-03',
 			tags: ['Rust', 'GameDev'],
 			isbn: 9781680508161,
+		},
+		{
+			title: 'Kafka: The Definitive Guide',
+			link: 'https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/',
+			date: '2017-10-10',
+			tags: ['Kafka', 'Streaming', 'Java'],
+			isbn: 9781491936153,
+		},
+		{
+			title: 'Serious Cryptography: A Practical Introduction to Modern Encryption ',
+			link: 'https://nostarch.com/seriouscrypto',
+			date: '2017-11-06',
+			tags: ['Cryptography', 'Security'],
+			isbn: 9781593278267,
 		}
 	]
 }
