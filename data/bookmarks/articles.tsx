@@ -8,7 +8,7 @@ export const articles: Category = {
 			title: 'Essential Books That Every Programmer Should Read',
 			link: 'https://dmshvetsov.medium.com/essential-books-that-every-programmer-should-read-a61565095781',
 			date: '2019-02-11',
-			tags: ['Programming', 'Books', 'Recomendations'],
+			tags: ['Programming', 'Reading List'],
 		},
 		{
 			title: 'Clean Architecture with Java 11',

@@ -62,11 +62,18 @@ export const books: Category = {
 			isbn: 9781491936153,
 		},
 		{
-			title: 'Serious Cryptography: A Practical Introduction to Modern Encryption ',
+			title: 'Serious Cryptography: A Practical Introduction to Modern Encryption',
 			link: 'https://nostarch.com/seriouscrypto',
 			date: '2017-11-06',
 			tags: ['Cryptography', 'Security'],
 			isbn: 9781593278267,
+		},
+		{
+			title: 'Practical Process Automation: Orchestration and Integration in Microservices and Cloud Native Architectures',
+			link: 'https://processautomationbook.com/',
+			date: '2021-03-16',
+			tags: ['Software Architecture', 'Cloud Native', 'Microservices', 'BPMN'],
+			isbn: 9781492061458,
 		}
 	]
 }
