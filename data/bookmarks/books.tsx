@@ -74,6 +74,13 @@ export const books: Category = {
 			date: '2021-03-16',
 			tags: ['Software Architecture', 'Cloud Native', 'Microservices', 'BPMN'],
 			isbn: 9781492061458,
+		},
+		{
+			title: 'Weniger schlecht programmieren',
+			link: 'https://oreilly.de/produkt/weniger-schlecht-programmieren/',
+			date: '2013-12-28',
+			tags: ['Programming'],
+			isbn: 9783897215672,
 		}
 	]
 }
