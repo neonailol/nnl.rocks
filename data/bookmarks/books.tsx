@@ -81,6 +81,13 @@ export const books: Category = {
 			date: '2013-12-28',
 			tags: ['Programming'],
 			isbn: 9783897215672,
+		},
+		{
+			title: 'System Design Interview - An insider\'s guide',
+			link: 'https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF',
+			date: '2020-06-12',
+			tags: ['Software Architecture', 'System Design'],
+			isbn: 9798664653403,
 		}
 	]
 }
