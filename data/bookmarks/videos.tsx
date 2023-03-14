@@ -52,5 +52,11 @@ export const videos: Category = {
 			date: '2022-02-16',
 			tags: ['PyTorch', 'Machine Learning', 'Deep Learning', 'Generative Adversarial Network', 'Vector Quantized'],
 		},
+		{
+			title: 'VQ-VAEs: Neural Discrete Representation Learning | Paper + PyTorch Code Explained',
+			link: 'https://youtu.be/VZFVUrYcig0',
+			date: '2021-06-30',
+			tags: ['PyTorch', 'Machine Learning', 'Vector Quantized', 'Variational Autoencoder'],
+		},
 	]
 }
