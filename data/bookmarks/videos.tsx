@@ -17,10 +17,28 @@ export const videos: Category = {
 			tags: ['Programming', 'GameDev', 'Procedural Generation'],
 		},
 		{
-			title: 'Cellular Automata & Procedural Generation | Game Development Tutorial',
+			title: 'Cellular Automata | Procedural Generation | Game Development Tutorial',
 			link: 'https://youtu.be/slTEz6555Ts',
 			date: '2020-09-19',
-			tags: ['Programming', 'GameDev', 'Procedural Generation'],
+			tags: ['Programming', 'GameDev', 'Procedural Generation', 'Cellular Automata'],
+		},
+		{
+			title: 'Diamond Square | Procedural Generation | Game Development Tutorial',
+			link: 'https://youtu.be/4GuAV1PnurU',
+			date: '2021-01-12',
+			tags: ['Programming', 'GameDev', 'Procedural Generation', 'Diamond Square'],
+		},
+		{
+			title: 'Lazy Flood Fill | Procedural Generation | Game Development Tutorial',
+			link: 'https://youtu.be/YS0MTrjxGbM',
+			date: '2021-02-13',
+			tags: ['Programming', 'GameDev', 'Procedural Generation', 'Lazy Flood Fill'],
+		},
+		{
+			title: 'Fractal Noise | Procedural Generation | Game Development Tutorial',
+			link: 'https://youtu.be/Z6m7tFztEvw',
+			date: '2021-05-01',
+			tags: ['Programming', 'GameDev', 'Procedural Generation', 'Fractal Noise'],
 		},
 		{
 			title: 'Diffusion models from scratch in PyTorch',
@@ -56,7 +74,7 @@ export const videos: Category = {
 			title: 'VQ-VAEs: Neural Discrete Representation Learning | Paper + PyTorch Code Explained',
 			link: 'https://youtu.be/VZFVUrYcig0',
 			date: '2021-06-30',
-			tags: ['PyTorch', 'Machine Learning', 'Vector Quantized', 'Variational Autoencoder'],
+			tags: ['PyTorch', 'Machine Learning', 'Deep Learning', 'Generative Adversarial Network', 'Vector Quantized', 'Variational Autoencoder'],
 		},
 	]
 }
