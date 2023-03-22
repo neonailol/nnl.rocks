@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"engines": {
-		"node": "19.7.0"
+		"node": "19.8.1"
 	},
 	"browserslist": [
 		"last 3 years",

@@ -8,7 +8,7 @@ export const videos: Category = {
 			title: 'A Firehose of Rust, for busy people who know some C++',
 			link: 'https://youtu.be/IPmRDS0OSxM',
 			date: '2021-06-01',
-			tags: ['Programming', 'Rust', 'C++'],
+			tags: ['Programming', 'Rust', 'CPP'],
 		},
 		{
 			title: 'Herbert Wolverson - Procedural Map Generation Techniques',
@@ -75,6 +75,24 @@ export const videos: Category = {
 			link: 'https://youtu.be/VZFVUrYcig0',
 			date: '2021-06-30',
 			tags: ['PyTorch', 'Machine Learning', 'Deep Learning', 'Generative Adversarial Network', 'Vector Quantized', 'Variational Autoencoder'],
+		},
+		{
+			title: 'The Diabolical Developer\'s Guide to JVM Ergonomics in Containers (Martijn Verburg)',
+			link: 'https://youtu.be/r6UAn3DnaXU',
+			date: '2022-12-30',
+			tags: ['Java', 'Containers', 'Kubernetes'],
+		},
+		{
+			title: 'Refactoring Is Not Just Clickbait - Kevlin Henney - NDC Oslo 2022',
+			link: 'https://youtu.be/piUesxuZkIQ',
+			date: '2022-12-22',
+			tags: ['Refactoring', 'Programming', 'Philosophy'],
+		},
+		{
+			title: 'Experimenting with Faster Elliptic Curves in Rust (Diego F. Aranha)',
+			link: 'https://youtu.be/flJcuR0Kvxw',
+			date: '2022-12-23',
+			tags: ['Rust', 'Cryptography', 'Elliptic Curves'],
 		},
 	]
 }
