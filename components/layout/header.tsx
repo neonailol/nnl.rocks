@@ -20,9 +20,9 @@ export default function Header() {
 						<Link href={"/bookmarks"} className={styles.bookmarks}>
 							<h2>Bookmarks</h2>
 						</Link>
-						<button className={styles.theme} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+						{/* <button className={styles.theme} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
 							<Icon icon={themeLightDark} />
-						</button>
+						</button> */}
 					</div>
 				</nav>
 			</header>
