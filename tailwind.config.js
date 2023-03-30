@@ -13,7 +13,6 @@ module.exports = {
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/aspect-ratio'),
-		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/container-queries'),
 		require('flowbite/plugin'),
 		require('flowbite-typography'),
