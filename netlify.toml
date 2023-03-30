@@ -3,5 +3,5 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "19.4.0"
+  NODE_VERSION = "19.8.1"
   NETLIFY_NEXT_PLUGIN_SKIP  = "true"
