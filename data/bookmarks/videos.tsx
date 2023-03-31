@@ -94,5 +94,29 @@ export const videos: Category = {
 			date: '2022-12-23',
 			tags: ['Rust', 'Cryptography', 'Elliptic Curves'],
 		},
+		{
+			title: 'Expert Talk: Managing Complexity in Software • Hadi Hariri',
+			link: 'https://youtu.be/P7CfWtR-ECk',
+			date: '2022-05-31',
+			tags: ['Software Development', 'Architecture', 'Philosophy', 'Complexity'],
+		},
+		{
+			title: 'Fibonacci Heaps or "How to invent an extremely clever data structure"',
+			link: 'https://youtu.be/6JxvKfSV9Ns',
+			date: '2022-07-28',
+			tags: ['Algorithms', 'Data Structures'],
+		},
+		{
+			title: 'Faster than Rust and C++: the PERFECT hash table',
+			link: 'https://youtu.be/DMQ_HcNSOAI',
+			date: '2023-03-11',
+			tags: ['Algorithms', 'Data Structures', 'Performance', 'Optimisation', 'Assembler'],
+		},
+		{
+			title: 'Researchers Use Group Theory to Speed Up Algorithms — Introduction to Groups',
+			link: 'https://youtu.be/KufsL2VgELo',
+			date: '2022-09-06',
+			tags: ['Algorithms', 'Abstract Algebra', 'Group Theory'],
+		},
 	]
 }
