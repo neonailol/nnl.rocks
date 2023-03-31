@@ -2,7 +2,7 @@ import bookOpenPageVariantOutline from '@iconify/icons-mdi/book-open-page-varian
 import articleIcon from '@iconify/icons-material-symbols/article';
 import slowMotionVideo from '@iconify/icons-material-symbols/slow-motion-video';
 import { IconifyIcon } from '@iconify/react/dist/offline';
-import { CategoryType } from '../../data/bookmarks/type';
+import { CategoryType } from '../../data/bookmarks/types';
 
 let icons = new Map<CategoryType, IconifyIcon>([
 	[CategoryType.Book, bookOpenPageVariantOutline],

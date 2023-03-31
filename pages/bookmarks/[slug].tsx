@@ -1,7 +1,7 @@
 import { about } from '../../data/about'
 import { bookmarksView, slugs } from '../../components/bookmarks/utils'
 import { BookmarkView } from '../../components/bookmarks/types'
-import { CategoryType } from '../../data/bookmarks/type'
+import { CategoryType } from '../../data/bookmarks/types'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { parseCategory, parseTag } from '../../data/bookmarks'
 import Footer from '../../components/layout/footer'

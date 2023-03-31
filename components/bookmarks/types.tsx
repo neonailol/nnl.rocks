@@ -1,4 +1,4 @@
-import { Bookmark, Category, CategoryType } from "../../data/bookmarks/type";
+import { Bookmark, CategoryType } from "../../data/bookmarks/types";
 
 export interface BookmarkView {
 	type: CategoryType,
@@ -8,12 +8,12 @@ export interface BookmarkView {
 	tags: Array<string>
 }
 
-export default function asView(category: Category, bookmark: Bookmark): BookmarkView {
+export default function asView(bookmark: Bookmark): BookmarkView {
 	return {
-		type: category.type,
+		type: bookmark.category,
 		title: bookmark.title,
 		link: bookmark.link,
-		date: bookmark.date,
+		date: bookmark.published_at,
 		tags: bookmark.tags
 	}
 }

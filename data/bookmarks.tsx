@@ -1,10 +1,8 @@
-import { articles } from './bookmarks/articles';
-import { books } from './bookmarks/books';
-import { videos } from './bookmarks/videos';
-import { Category } from './bookmarks/type';
+import { db } from './bookmarks/db';
+import { Bookmark } from './bookmarks/types';
 
-export function bookmarks(): Array<Category> {
-	return [books, articles, videos];
+export function bookmarks(): Array<Bookmark> {
+	return db;
 }
 
 export function parseCategory(slug: string | string[] | undefined): string | undefined {

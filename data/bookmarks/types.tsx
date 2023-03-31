@@ -1,18 +1,16 @@
 
-export interface Category {
-	title: string,
-	type: CategoryType,
-	bookmarks: Array<Bookmark>
-}
-
 export enum CategoryType {
-	Book, Article, Video
+	Book,
+	Article,
+	Video
 }
 
 export interface Bookmark {
+	category: CategoryType,
 	title: string,
 	link: string,
-	date: string,
+	added_at: String,
+	published_at: string,
 	tags: Array<string>,
 	isbn?: number,
 	alternative?: string

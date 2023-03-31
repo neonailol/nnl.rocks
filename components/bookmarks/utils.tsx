@@ -1,20 +1,20 @@
 import { bookmarks } from '../../data/bookmarks';
-import { Category, CategoryType } from '../../data/bookmarks/type';
+import { CategoryType } from '../../data/bookmarks/types';
 import asView, { BookmarkView } from './types';
 import slugify from 'slugify';
 
 export function bookmarksView() {
-	return bookmarks().flatMap(it => it.bookmarks.map(bookmark => asView(it, bookmark))).sort((l, r) => l.date.localeCompare(r.date));
+	return bookmarks().map(it => asView(it)).sort((l, r) => l.date.localeCompare(r.date));
 }
 
 export function categories() {
-	return bookmarks().map(it => categoryView(it)).sort((l, r) => l.title.localeCompare(r.title))
+	return Object.values(CategoryType).filter(isNaN as any).map(it => categoryView(it)).sort((l, r) => l.title.localeCompare(r.title))
 }
 
-function categoryView(it: Category): { title: string, slug: string } {
+function categoryView(it: string | CategoryType): { title: string, slug: string } {
 	return {
-		title: it.title,
-		slug: 'category-' + slugify(CategoryType[it.type], { lower: true, strict: true })
+		title: it.toString(),
+		slug: 'category-' + slugify(it.toString(), { lower: true, strict: true })
 	}
 }
 
