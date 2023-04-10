@@ -48,7 +48,7 @@
 		"cross-env": "^7.0.3",
 		"cssnano": "^6.0.0",
 		"eslint": "^8.37.0",
-		"eslint-config-next": "^13.2.4",
+		"eslint-config-next": "^13.3.0",
 		"lodash": "^4.17.21",
 		"postcss": "^8.4.21",
 		"serve": "^14.2.0",
