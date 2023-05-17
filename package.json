@@ -34,7 +34,7 @@
 		"@netlify/next": "^1.4.6",
 		"@netlify/plugin-nextjs": "^4.37.0",
 		"@next/bundle-analyzer": "^13.3.0",
-		"@svgr/webpack": "^7.0.0",
+		"@svgr/webpack": "^8.0.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.3",
