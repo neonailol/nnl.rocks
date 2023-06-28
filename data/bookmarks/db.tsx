@@ -334,4 +334,13 @@ export const db: Array<Bookmark> = [
         published_at: '2022-08-16',
         tags: ['Software Development', 'Philosophy'],
     },
+    {
+        category: CategoryType.Book,
+        added_at: '2023-06-28',
+        title: 'Deep Learning Illustrated',
+        link: 'https://www.deeplearningillustrated.com/',
+        published_at: '2019-09-18',
+        tags: ['Machine Learning', 'Deep Learning'],
+        isbn: 9780135116692,
+    }
 ]
