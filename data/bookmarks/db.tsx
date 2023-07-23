@@ -342,5 +342,29 @@ export const db: Array<Bookmark> = [
         published_at: '2019-09-18',
         tags: ['Machine Learning', 'Deep Learning'],
         isbn: 9780135116692,
+    },
+    {
+        category: CategoryType.Video,
+        added_at: '2023-07-15',
+        title: 'The Pragmatic Programmer 20 Years Later • Pragmatic Dave Thomas • GOTO 2020',
+        link: 'https://youtu.be/0AzkH8SYyOc',
+        published_at: '2020-10-26',
+        tags: ['Software Development', 'Philosophy'],
+    },
+    {
+        category: CategoryType.Video,
+        added_at: '2023-07-16',
+        title: 'Large-Scale Architecture: The Unreasonable Effectiveness of Simplicity • Randy Shoup • YOW! 2022',
+        link: 'https://youtu.be/oejXFgvAwTA',
+        published_at: '2023-07-08',
+        tags: ['Software Development', 'Software Architecture'],
+    },
+    {
+        category: CategoryType.Video,
+        added_at: '2023-07-23',
+        title: 'Minimum Viable Architecture • Randy Shoup • YOW! 2022',
+        link: 'https://youtu.be/9Q7GANXn02k',
+        published_at: '2023-07-18',
+        tags: ['Software Development', 'Software Architecture'],
     }
 ]
