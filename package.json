@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"engines": {
-		"node": "20.4.0"
+		"node": "20.5.0"
 	},
 	"browserslist": [
 		"last 3 years",
@@ -18,7 +18,7 @@
 		"analyze": "cross-env ANALYZE=true next build"
 	},
 	"dependencies": {
-		"next": "^13.4.10",
+		"next": "^13.4.12",
 		"next-themes": "^0.2.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -33,14 +33,14 @@
 		"@iconify/react": "^4.1.1",
 		"@netlify/next": "^1.4.9",
 		"@netlify/plugin-nextjs": "^4.39.1",
-		"@next/bundle-analyzer": "^13.4.10",
+		"@next/bundle-analyzer": "^13.4.12",
 		"@svgr/webpack": "^8.0.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.4",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/lodash": "^4.14.195",
-		"@types/node": "^20.4.2",
+		"@types/node": "^20.4.4",
 		"@types/react": "^18.2.15",
 		"@types/react-dom": "^18.2.7",
 		"autoprefixer": "^10.4.14",
@@ -48,9 +48,9 @@
 		"cross-env": "^7.0.3",
 		"cssnano": "^6.0.1",
 		"eslint": "^8.45.0",
-		"eslint-config-next": "^13.4.10",
+		"eslint-config-next": "^13.4.12",
 		"lodash": "^4.17.21",
-		"postcss": "^8.4.26",
+		"postcss": "^8.4.27",
 		"serve": "^14.2.0",
 		"slugify": "^1.6.6",
 		"typescript": "^5.1.6"
