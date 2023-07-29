@@ -2,30 +2,6 @@ import { Bookmark, CategoryType } from "./types";
 
 export const db: Array<Bookmark> = [
     {
-        category: CategoryType.Article,
-        added_at: '2023-01-03',
-        title: 'Essential Books That Every Programmer Should Read',
-        link: 'https://dmshvetsov.medium.com/essential-books-that-every-programmer-should-read-a61565095781',
-        published_at: '2019-02-11',
-        tags: ['Programming', 'Reading List'],
-    },
-    {
-        category: CategoryType.Article,
-        added_at: '2023-01-03',
-        title: 'Clean Architecture with Java 11',
-        link: 'https://medium.com/slalom-build/clean-architecture-with-java-11-f78bba431041',
-        published_at: '2019-02-04',
-        tags: ['Java', 'Clean Architecture', 'Software Architecture'],
-    },
-    {
-        category: CategoryType.Article,
-        added_at: '2023-01-03',
-        title: 'The Forgotten History of OOP',
-        link: 'https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f',
-        published_at: '2018-11-01',
-        tags: ['Programming', 'OOP', 'JavaScript', 'Functional Programming'],
-    },
-    {
         category: CategoryType.Book,
         added_at: '2023-01-05',
         title: 'Five Lines of Code: How and when to refactor',
@@ -366,5 +342,13 @@ export const db: Array<Bookmark> = [
         link: 'https://youtu.be/9Q7GANXn02k',
         published_at: '2023-07-18',
         tags: ['Software Development', 'Software Architecture'],
+    },
+    {
+        category: CategoryType.Article,
+        added_at: '2023-07-29',
+        title: 'You Want Modules, Not Microservices',
+        link: 'https://blogs.newardassociates.com/blog/2023/you-want-modules-not-microservices.html',
+        published_at: '2023-01-12',
+        tags: ['Software Architecture', 'Microservices'],
     }
 ]
