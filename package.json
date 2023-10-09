@@ -47,7 +47,7 @@
 		"critters": "^0.0.19",
 		"cross-env": "^7.0.3",
 		"cssnano": "^6.0.1",
-		"eslint": "^8.45.0",
+		"eslint": "^8.51.0",
 		"eslint-config-next": "^13.4.12",
 		"lodash": "^4.17.21",
 		"postcss": "^8.4.27",
