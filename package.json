@@ -42,7 +42,7 @@
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/lodash": "^4.14.202",
 		"@types/node": "^20.11.3",
-		"@types/react": "^18.2.47",
+		"@types/react": "^18.2.48",
 		"@types/react-dom": "^18.2.18",
 		"autoprefixer": "^10.4.16",
 		"critters": "^0.0.20",
