@@ -54,6 +54,6 @@
 		"postcss": "^8.4.38",
 		"serve": "^14.2.1",
 		"slugify": "^1.6.6",
-		"typescript": "^5.4.4"
+		"typescript": "^5.4.5"
 	}
 }
