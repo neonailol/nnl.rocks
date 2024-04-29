@@ -33,7 +33,7 @@
 		"@iconify/icons-mdi": "^1.2.48",
 		"@iconify/react": "^4.1.1",
 		"@netlify/next": "^1.4.9",
-		"@netlify/plugin-nextjs": "^4.41.3",
+		"@netlify/plugin-nextjs": "^5.1.2",
 		"@next/bundle-analyzer": "^14.2.2",
 		"@svgr/webpack": "^8.1.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
