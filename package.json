@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"engines": {
-		"node": "21.4.0"
+		"node": ">=22"
 	},
 	"browserslist": [
 		"last 3 years",
@@ -12,46 +12,47 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"test": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"serve": "serve out",
 		"analyze": "cross-env ANALYZE=true next build"
 	},
 	"dependencies": {
-		"flowbite": "^2.4.1",
+		"flowbite": "^2.5.1",
 		"flowbite-typography": "^1.0.3",
-		"next": "^14.2.4",
+		"next": "^14.2.5",
 		"next-themes": "^0.3.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"tailwindcss": "^3.4.7"
+		"tailwindcss": "^3.4.9"
 	},
 	"devDependencies": {
-		"@babel/eslint-parser": "^7.24.8",
+		"@babel/eslint-parser": "^7.25.1",
 		"@iconify/icons-fa-brands": "^1.2.4",
 		"@iconify/icons-material-symbols": "^1.2.58",
 		"@iconify/icons-mdi": "^1.2.48",
-		"@iconify/react": "^5.0.1",
+		"@iconify/react": "^5.0.2",
 		"@netlify/next": "^1.4.9",
-		"@netlify/plugin-nextjs": "^5.5.0",
+		"@netlify/plugin-nextjs": "^5.6.0",
 		"@next/bundle-analyzer": "^14.2.5",
 		"@svgr/webpack": "^8.1.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.7",
-		"@tailwindcss/typography": "^0.5.13",
-		"@types/lodash": "^4.17.6",
-		"@types/node": "^22.0.0",
+		"@tailwindcss/typography": "^0.5.14",
+		"@types/lodash": "^4.17.7",
+		"@types/node": "^22.2.0",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
-		"autoprefixer": "^10.4.19",
+		"autoprefixer": "^10.4.20",
 		"critters": "^0.0.24",
 		"cross-env": "^7.0.3",
-		"cssnano": "^7.0.4",
+		"cssnano": "^7.0.5",
 		"eslint": "^8.57.0",
 		"eslint-config-next": "^14.2.5",
 		"lodash": "^4.17.21",
-		"postcss": "^8.4.40",
+		"postcss": "^8.4.41",
 		"serve": "^14.2.3",
 		"slugify": "^1.6.6",
 		"typescript": "^5.5.4"

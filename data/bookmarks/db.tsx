@@ -399,4 +399,20 @@ export const db: Array<Bookmark> = [
         published_at: '2023-10-10',
         tags: ['CPP', 'Performance', 'Algorithms'],
     },
+    {
+        category: CategoryType.Video,
+        added_at: '2024-08-10',
+        title: 'Technical Neglect - Kevlin Henney - NDC London 2024',
+        link: 'https://youtu.be/9iLxR1h2208',
+        published_at: '2024-04-10',
+        tags: ['Programming', 'Philosophy', 'Technical Debt'],
+    },
+    {
+        category: CategoryType.Video,
+        added_at: '2024-08-10',
+        title: 'Intentional Code - Minimalism in a World of Dogmatic Design - David Whitney - NDC Sydney 2024',
+        link: 'https://youtu.be/8j4fhsLcT4k',
+        published_at: '2024-06-23',
+        tags: ['Programming', 'Philosophy', 'Software Architecture'],
+    },
 ]
