@@ -21,7 +21,7 @@
 	"dependencies": {
 		"flowbite": "^2.5.2",
 		"flowbite-typography": "^1.0.4",
-		"next": "^14.2.15",
+		"next": "^15.0.2",
 		"next-themes": "^0.3.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
