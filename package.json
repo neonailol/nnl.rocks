@@ -35,7 +35,7 @@
 		"@iconify/react": "^5.0.2",
 		"@netlify/next": "^1.4.9",
 		"@netlify/plugin-nextjs": "^5.8.1",
-		"@next/bundle-analyzer": "^15.0.1",
+		"@next/bundle-analyzer": "^15.0.3",
 		"@svgr/webpack": "^8.1.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
